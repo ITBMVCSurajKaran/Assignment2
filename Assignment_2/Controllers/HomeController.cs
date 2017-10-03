@@ -11,7 +11,7 @@ namespace Assignment_2.Controllers
         public ActionResult Index()
         {
 
-            string karan = "This is me! all gud check it bro Its working"; 
+            string karan = "This is me!"; 
             return View();
         }
 
