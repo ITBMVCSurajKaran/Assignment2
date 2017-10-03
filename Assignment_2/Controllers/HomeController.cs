@@ -19,6 +19,8 @@ namespace Assignment_2.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
+            int suraj = 10;
+
             return View();
         }
 
