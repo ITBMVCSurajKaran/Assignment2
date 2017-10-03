@@ -11,7 +11,7 @@ namespace Assignment_2.Controllers
         public ActionResult Index()
         {
 
-            string karan = "This is me! karan"; 
+            //string karan = "This is me! karan"; 
             return View();
         }
 
@@ -19,7 +19,7 @@ namespace Assignment_2.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            int suraj = 10;
+           // int suraj = 10;
 
             return View();
         }
