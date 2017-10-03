@@ -10,6 +10,8 @@ namespace Assignment_2.Controllers
     {
         public ActionResult Index()
         {
+
+            string karan = "This is me!"; 
             return View();
         }
 
