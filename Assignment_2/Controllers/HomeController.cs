@@ -30,5 +30,12 @@ namespace Assignment_2.Controllers
 
             return View();
         }
+
+        public ActionResult Test()
+        {
+            ViewBag.Message = " Tesing Pages!";
+
+            return View();
+        }
     }
 }
