@@ -266,6 +266,7 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Shared\_LayoutOperation.cshtml" />
     <Content Include="Views\AdminHome\Index.cshtml" />
+    <Content Include="Views\Home\Content.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
