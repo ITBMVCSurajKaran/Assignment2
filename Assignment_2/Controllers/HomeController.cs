@@ -37,15 +37,5 @@ namespace Assignment_2.Controllers
 
             return View();
         }
-
-        public ActionResult Content()
-        {
-            ViewBag.Message = " This is the learning area ";
-
-            return View();
-
-        }
-
-
     }
 }
