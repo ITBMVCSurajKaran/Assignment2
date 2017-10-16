@@ -11,7 +11,7 @@ namespace Assignment_2.Controllers
         public ActionResult Index()
         {
 
-            string karan = "This is me! karan"; 
+            string karan = "Last change by suraj"; 
             return View();
         }
 
@@ -37,15 +37,5 @@ namespace Assignment_2.Controllers
 
             return View();
         }
-
-        public ActionResult Content()
-        {
-            ViewBag.Message = " This is the learning area ";
-
-            return View();
-
-        }
-
-
     }
 }
