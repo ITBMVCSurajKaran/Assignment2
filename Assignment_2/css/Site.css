@@ -19,22 +19,6 @@
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
- {
+textarea {
     max-width: 280px;
 }
-.video-div{
-    width:1200px;
-    height:600px;
-}
-.text-val {
-    max-width: 750px;
-    width: 750px;
-    height: 200px;
-    max-height: 200px;
-    color:black;
-    font-size:larger;
-}
-
-
-
-
