@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Assignment_2.Models;
+using Assignment_2.Helpers;
 
 namespace Assignment_2.Controllers
 {
@@ -79,6 +80,10 @@ namespace Assignment_2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+
+                    ApplicationUser user = UserManager.FindByName(model.Email);
+                    Logger logger = new Logger();
+                    logger.addEvent(user.Id, "login");
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

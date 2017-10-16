@@ -194,7 +194,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Logger.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AppEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +205,10 @@
     <Compile Include="Controllers\Administrtor\AdminHomeController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\UserData.mdf" />
+    <Content Include="App_Data\UserData_log.ldf">
+      <DependentUpon>UserData.mdf</DependentUpon>
+    </Content>
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -266,9 +272,9 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Shared\_LayoutOperation.cshtml" />
     <Content Include="Views\AdminHome\Index.cshtml" />
+    <Content Include="Views\Home\_Lesson1.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\" />
     <Folder Include="Controllers\Instructor\" />
   </ItemGroup>
