@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Content";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Learn Javascript
+                <small>Chapter-1</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="active">Services</li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+           <iframe src="https://www.youtube.com/embed/fju9ii8YsGs" class="img-responsive video-div" allowfullscreen></iframe>
+
+            
+
+
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Service Paragraphs -->
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="page-header">Some Javescript Basics : Chapter-1</h2>
+
+            <textarea cols=”80″ rows=”85″ class=" text-val" disabled> <script>
+document.getElementById('demo').innerHTML = "Hello";
+</script></textarea></br>
+            <a href="#" class="btn btn-primary"> << Prev </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary">  Next   >></a>
+
+        </div>
+        <div class="col-md-4">
+            <h2 class="page-header">Want to try yourself!</h2>
+            <p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+            <a href="#" class="btn btn-primary">Try Now!</a>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Service Tabs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">More About Javascript</h2>
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active">
+                    <a data-toggle="tab" href="#service-one">Javascript Power</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#service-two">Learning Speed</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#service-three">JavaScript References</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div id="service-one" class="tab-pane fade in active">
+                    <i class="fa fa-gear pull-left fa-4x"></i>
+                    <p>JavaScript and Java are completely different languages, both in concept and design.JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.
+                       ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.</p>
+
+                        <p>You can read more about the different JavaScript versions in the chapter JS Versions.</p>
+                </div>
+                <div id="service-two" class="tab-pane fade">
+                    <i class="fa fa-gears pull-left fa-4x"></i>
+                    <p> In this tutorial, the learning speed is your choice.
+
+                        Everything is up to you.
+
+                        If you are struggling, take a break, or reread the material.
+
+                         Always make sure you understand all the "Try-it-Yourself" examples.</p></div>
+                <div id="service-three" class="tab-pane fade">
+                    <i class="fa fa-magic pull-left fa-4x"></i>
+                    <p>The reference contains examples for all properties and methods, and is continuously updated according to the latest web standards.
+
+                       Complete JavaScript Reference</p></div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Service Images -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">More Courses</h2>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+            <h3>HTML</h3>
+            <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+            <h3>CSS</h3>
+            <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+            <h3>jquery</h3>
+            <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+

@@ -272,7 +272,11 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Shared\_LayoutOperation.cshtml" />
     <Content Include="Views\AdminHome\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Home\_Lesson1.cshtml" />
+=======
+    <Content Include="Views\Home\Content.cshtml" />
+>>>>>>> 3bcfdf4944eb3d90bac0124c4d430e8dfc96df3e
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
