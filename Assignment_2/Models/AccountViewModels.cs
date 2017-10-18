@@ -55,7 +55,7 @@ namespace Assignment_2.Models
         [DataType(DataType.Text)]
         public string UserName { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
@@ -94,9 +94,9 @@ namespace Assignment_2.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Date of Birth is required")]
-        [Display(Name = "Birth Date")]
-        public System.DateTime DOB { get; set; }
+        //[Required(ErrorMessage = "Date of Birth is required")]
+        //[Display(Name = "Birth Date")]
+        //public System.DateTime DOB { get; set; }
     }
 
     public class ResetPasswordViewModel

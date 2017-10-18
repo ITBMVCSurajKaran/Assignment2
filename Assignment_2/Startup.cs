@@ -66,9 +66,9 @@ namespace Assignment_2
 
             var users = new List<ApplicationUser>
             {
-                new ApplicationUser{ UserName="suraj", Email="suraj@gmail.com", Id="b2cfcc69-1959-4913-ae78-070d5e60af05" },
-                new ApplicationUser{ UserName="karan", Email="karan@gmail.com", Id="8b7efdb4-e0c8-40d0-ac17-4ab34c9da983" },
-                new ApplicationUser{ UserName="ron", Email="ron@gmail.com", Id="92f20888-702a-4b64-aad0-ffbd32462e2e" }
+                new ApplicationUser{ UserName="Suraj", Email="suraj@gmail.com", Id="b2cfcc69-1959-4913-ae78-070d5e60af05" },
+                new ApplicationUser{ UserName="Karan", Email="karan@gmail.com", Id="8b7efdb4-e0c8-40d0-ac17-4ab34c9da983" },
+                new ApplicationUser{ UserName="Mark", Email="mark@gmail.com", Id="92f20888-702a-4b64-aad0-ffbd32462e2e" }
             };
 
             foreach (IdentityRole role in roles)
@@ -79,7 +79,7 @@ namespace Assignment_2
             // asp.net identity default password policy is required length of 6
             foreach (ApplicationUser user in users)
             {
-                var result = userManager.Create(user, "masterPassword");
+                var result = userManager.Create(user, "password_0");
                 if (result.Succeeded) userManager.AddToRole(user.Id, "Student");
             }
 
