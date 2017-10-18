@@ -82,8 +82,8 @@ namespace Assignment_2.Controllers
                 case SignInStatus.Success:
 
                     ApplicationUser user = UserManager.FindByName(model.UserName);
-                    Logger logger = new Logger();
-                    logger.addEvent(user.Id, "login");
+                  //  Logger logger = new Logger();
+                   // logger.addEvent(user.Id, "login");
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
