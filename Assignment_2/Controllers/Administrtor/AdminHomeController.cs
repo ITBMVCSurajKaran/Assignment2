@@ -8,6 +8,7 @@ namespace Assignment_2.Controllers
 {
     public class AdminHomeController : Controller
     {
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View ();
