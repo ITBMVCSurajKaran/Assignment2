@@ -74,6 +74,15 @@
 
                         </ul>
                     </li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                @Html.ActionLink("Administration", "Index", "AdminHome")
+                            </li>
+                        }
+                    }
                     @Html.Partial("_LoginPartial")
                 </ul>
             </div>

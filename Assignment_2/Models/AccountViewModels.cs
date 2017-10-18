@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace Assignment_2.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -48,12 +49,19 @@ namespace Assignment_2.Models
 
     public class LoginViewModel
     {
+
+        [Required]
+        [Display(Name = "User Name")]
+        [DataType(DataType.Text)]
+        public string UserName { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -64,6 +72,12 @@ namespace Assignment_2.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [StringLength(100,ErrorMessage  = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +93,10 @@ namespace Assignment_2.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required(ErrorMessage = "Date of Birth is required")]
+        [Display(Name = "Birth Date")]
+        public System.DateTime DOB { get; set; }
     }
 
     public class ResetPasswordViewModel
