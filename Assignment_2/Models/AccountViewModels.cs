@@ -94,6 +94,10 @@ namespace Assignment_2.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Required]
+        [Display(Name = "As a")]
+        public string UserRoles { get; set; }
+
         //[Required(ErrorMessage = "Date of Birth is required")]
         //[Display(Name = "Birth Date")]
         //public System.DateTime DOB { get; set; }

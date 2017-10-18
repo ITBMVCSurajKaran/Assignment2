@@ -28,7 +28,7 @@ namespace Assignment_2
                 LoginPath = new PathString("/Account/Login")
             });
 
-            seedDatabase();
+         //   seedDatabase();
 
             ConfigureAuth(app);
         }
