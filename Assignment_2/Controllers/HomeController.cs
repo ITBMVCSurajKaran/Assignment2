@@ -37,5 +37,14 @@ namespace Assignment_2.Controllers
 
             return View();
         }
+        public ActionResult Editor()
+        {
+            return View();
+        }
+        public ActionResult Content()
+        {
+            return View();
+        }
+
     }
 }

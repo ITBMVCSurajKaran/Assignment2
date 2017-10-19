@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                JavaScript Editor
+                <small>Try Your knowladge!</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="active">Javascriot Editor</li>
+            </ol>
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        function btnEdit_onclick() {
+            frame1.document.clear();
+            frame1.document.write(document.getElementById('htmlArea').value);
+            return false;
+        }
+    </script>
+    <div class="row">
+        <div class="col-md-6 portfolio-item">
+            <textarea spellcheck="false" class="form-control" id="htmlArea" rows="23">                  
+                </textarea>
+            <div class="form-group col-lg-12">
+                <button class="btn btn-primary"  id="btnEdit" onclick="return btnEdit_onclick()">Run>></button>
+            </div>
+        </div>
+        <div class="col-md-6 portfolio-item">
+            <iframe id="frame1" frameborder="1"  class="img-responsive editor-div"  max-height="100%" style="background-color:white; overflow:hidden;" ></iframe>   
+        </div>
+    </div>
+</div>
+
