@@ -17,6 +17,7 @@ namespace Assignment_2.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        // Admin GUID = "b2cfcc69-1959-4913-ae78-070d5e60af05"
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationDbContext context;
@@ -87,6 +88,10 @@ namespace Assignment_2.Controllers
                     ApplicationUser user = UserManager.FindByName(model.UserName);
                     //  Logger logger = new Logger();
                     // logger.addEvent(user.Id, "login");
+
+                    CommonHelpers commonHelpers = new CommonHelpers();
+                    commonHelpers.AddLog_Login(user.Id);
+
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -178,8 +183,10 @@ namespace Assignment_2.Controllers
                     //Assign Role to user Here      
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     //Ends Here    
-                    
 
+                    CommonHelpers commonHelpers = new CommonHelpers();
+                    commonHelpers.Add_Log((user.Id));
+             
                     return RedirectToAction("Index", "Users");
 
                 }

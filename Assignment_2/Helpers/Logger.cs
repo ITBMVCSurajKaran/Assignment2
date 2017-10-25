@@ -12,7 +12,7 @@ namespace Assignment_2.Helpers
 
         public void addEvent(string user_id, string eventType)
         {
-            var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["userdata"].ToString());
+            var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["MyLearnDBEntities"].ToString());
             var dbcommand = new SqlCommand("insert into app_events (user_id, event_date, event_type) values (@user_id, @event_date, @event_type)", dbcon);
            // dbcommand.Parameters.AddWithValue("@Id", SqlDbType.UniqueIdentifier).Value = Guid.NewGuid();
             dbcommand.Parameters.AddWithValue("@user_id", SqlDbType.UniqueIdentifier).Value = user_id;

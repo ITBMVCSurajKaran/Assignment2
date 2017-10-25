@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -188,22 +190,45 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrator\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
+    <Compile Include="City.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Administrtor\RoleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CommonHelpers.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="MyLearnDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLearnDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyLearnDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyLearnDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLearnDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
-    <Compile Include="Controllers\Administrtor\AdminHomeController.cs" />
+    <Compile Include="UserLog.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap-theme.css" />
@@ -219,6 +244,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Administrator\Views\web.config" />
+    <Content Include="Areas\Instructor\Views\web.config" />
+    <Content Include="Areas\Administrator\Views\AdminHome\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\AdminHome\Users.cshtml" />
+    <Content Include="Areas\Administrator\Views\AdminHome\Roles.cshtml" />
+    <Content Include="Areas\Administrator\Views\AdminHome\AddRole.cshtml" />
     <None Include="js\jquery-1.10.2.intellisense.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -232,6 +263,16 @@
     <Content Include="js\modernizr-2.6.2.js" />
     <Content Include="js\respond.js" />
     <Content Include="js\respond.min.js" />
+    <Content Include="MyLearnDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyLearnDB.edmx</DependentUpon>
+      <LastGenOutput>MyLearnDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MyLearnDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyLearnDB.edmx</DependentUpon>
+      <LastGenOutput>MyLearnDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -268,17 +309,25 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Shared\_LayoutOperation.cshtml" />
-    <Content Include="Views\AdminHome\Index.cshtml" />
     <Content Include="Views\Home\_Lesson1.cshtml" />
-    <Content Include="Views\Role\Index.cshtml" />
-    <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Home\Editor.cshtml" />
     <Content Include="Views\Home\Content.cshtml" />
+    <EntityDeploy Include="MyLearnDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyLearnDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MyLearnDB.edmx.diagram">
+      <DependentUpon>MyLearnDB.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administrator\Models\" />
+    <Folder Include="Areas\Administrator\Views\Shared\" />
+    <Folder Include="Areas\Instructor\Controllers\" />
+    <Folder Include="Areas\Instructor\Models\" />
+    <Folder Include="Areas\Instructor\Views\Shared\" />
     <Folder Include="Content\" />
-    <Folder Include="Controllers\Instructor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -294,6 +343,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
