@@ -192,6 +192,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\GroupMastersController.cs" />
     <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
     <Compile Include="City.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
@@ -199,8 +200,20 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="CourseDetail.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseMaster.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GroupDetail.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupMaster.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CommonHelpers.cs" />
     <Compile Include="Helpers\Logger.cs" />
@@ -224,9 +237,15 @@
       <DependentUpon>MyLearnDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuizDetail.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="UserLog.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserPreferenceMaster.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -250,6 +269,11 @@
     <Content Include="Areas\Administrator\Views\AdminHome\Users.cshtml" />
     <Content Include="Areas\Administrator\Views\AdminHome\Roles.cshtml" />
     <Content Include="Areas\Administrator\Views\AdminHome\AddRole.cshtml" />
+    <Content Include="Areas\Administrator\Views\GroupMasters\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\GroupMasters\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\GroupMasters\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\GroupMasters\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\GroupMasters\Index.cshtml" />
     <None Include="js\jquery-1.10.2.intellisense.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -323,9 +347,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Models\" />
+    <Folder Include="Areas\Administrator\Views\Group\" />
     <Folder Include="Areas\Administrator\Views\Shared\" />
     <Folder Include="Areas\Instructor\Controllers\" />
     <Folder Include="Areas\Instructor\Models\" />
+    <Folder Include="Areas\Instructor\Views\Group\" />
     <Folder Include="Areas\Instructor\Views\Shared\" />
     <Folder Include="Content\" />
   </ItemGroup>
