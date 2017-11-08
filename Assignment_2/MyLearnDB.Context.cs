@@ -27,5 +27,11 @@ namespace Assignment_2
     
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
+        public virtual DbSet<CourseDetail> CourseDetails { get; set; }
+        public virtual DbSet<CourseMaster> CourseMasters { get; set; }
+        public virtual DbSet<GroupDetail> GroupDetails { get; set; }
+        public virtual DbSet<GroupMaster> GroupMasters { get; set; }
+        public virtual DbSet<QuizDetail> QuizDetails { get; set; }
+        public virtual DbSet<UserPreferenceMaster> UserPreferenceMasters { get; set; }
     }
 }

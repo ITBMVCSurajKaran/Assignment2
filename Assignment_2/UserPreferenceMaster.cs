@@ -12,12 +12,13 @@ namespace Assignment_2
     using System;
     using System.Collections.Generic;
     
-    public partial class UserLog
+    public partial class UserPreferenceMaster
     {
         public System.Guid Id { get; set; }
-        public string UserID { get; set; }
-        public Nullable<System.DateTime> Login { get; set; }
-        public Nullable<System.DateTime> Quiz { get; set; }
-        public Nullable<System.DateTime> ActivityAccessed { get; set; }
+        public System.Guid UserID { get; set; }
+        public string ThemeColor { get; set; }
+        public string Font { get; set; }
+        public Nullable<System.DateTime> DateCreated { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     }
 }
