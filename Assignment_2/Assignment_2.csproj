@@ -219,6 +219,7 @@
     </Compile>
     <Compile Include="Helpers\CommonHelpers.cs" />
     <Compile Include="Helpers\Logger.cs" />
+    <Compile Include="Helpers\StudentHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
