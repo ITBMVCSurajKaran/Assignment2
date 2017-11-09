@@ -199,7 +199,9 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JavascriptBeginnerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="CourseDetail.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
@@ -343,6 +345,19 @@
     <Content Include="MyLearnDB.edmx.diagram">
       <DependentUpon>MyLearnDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Views\Quiz\QuizOne.cshtml" />
+    <Content Include="Views\Quiz\ProcessResult.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Index.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter1.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter10.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter2.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter3.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter4.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter5.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter6.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter7.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter8.cshtml" />
+    <Content Include="Views\JavascriptBeginner\Chapter9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

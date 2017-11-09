@@ -1,4 +1,123 @@
-﻿body {
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+    white-space: normal;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,{
+    max-width: 280px;
+}*/
+
+/*.video-div {
+    width: 1200px;
+    height: 600px;
+}
+.editor-div {
+    width: 1200px;
+    height: 434px;
+}
+
+.text-val {
+    max-width: 750px;
+    width: 750px;
+    height: 200px;
+    max-height: 200px;
+    color: black;
+    font-size: larger;
+}*/
+
+/* New karan */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    /*background-color: white;
+    color: black;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+{
+    max-width: 280px;
+}
+
+.video-div {
+    width: 1200px;
+    height: 600px;
+}
+
+.editor-div {
+    width: 1200px;
+    height: 434px;
+}
+
+.text-val {
+    max-width: 750px;
+    width: 750px;
+    height: 200px;
+    max-height: 200px;
+    color: black;
+    font-size: larger;
+}
+
+#form-control {
+    text-align: left;
+    font-size: 30px;
+    margin: 20px;
+    padding: 25px;
+}
+
+html {
+    font-size: 20px;
+}
+
+label {
+    font-size: large;
+    color: orange;
+}
+
+nav {
+    font-size: 20px;
+}
+
+#result-sheet {
+    border: dotted;
+    font-family: 'Berlin Sans FB';
+    color: orange;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -27,6 +146,7 @@ select,
     width: 1200px;
     height: 600px;
 }
+
 .editor-div {
     width: 1200px;
     height: 434px;
@@ -40,3 +160,62 @@ select,
     color: black;
     font-size: larger;
 }
+
+.div-video_dashbord {
+    width: 100%;
+    min-height: 250px;
+    padding: 30px 50px;
+}
+
+.inner-dashbord {
+    width: 100%;
+    min-height: 240px;
+    color: #fff;
+}
+
+.content-display {
+    display: flex;
+    height: 300px;
+}
+
+.img-display {
+    position: relative;
+    height: 100%;
+    margin-right: 50px;
+    flex: 1;
+    min-width: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 425px;
+}
+
+.display-img {
+    width: 425px;
+    height: inherit;
+    float: left;
+}
+
+.controls-display {
+    position: initial;
+    height: 100%;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    min-width: 500px;
+    color: #293f63;
+}
+
+li {
+    font-size: 20px;
+    text-decoration-style: wavy;
+    color: grey;
+}
+
+.navv:hover {
+    background-color: none;
+    color: white;
+}
+

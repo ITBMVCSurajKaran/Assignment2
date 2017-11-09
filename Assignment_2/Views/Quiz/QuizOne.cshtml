@@ -1,0 +1,123 @@
+﻿@*@using System.Web.Mvc.Html;*@
+@{
+    ViewBag.Title = "QuizOne";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<img width="100%" height="250px" src="http://www.kidsworldfun.com/images/elearning/English-Grammar-Quiz-Time.png" />
+<br />
+<br /><br />
+<div id="form-control">
+    
+    <p style="font-size:10px; font-family:'Agency FB';">*you need atleast 40% marks to pass</p>
+    @using (Html.BeginForm("ProcessResult", "Quiz"))
+    {
+        <p>1. Javascript is a object oriented programing</p>
+        <p>
+            
+            @Html.RadioButton("Answer", "True", false)
+            @Html.Label("A.   True")
+        </p>
+        <p>
+            
+            @Html.RadioButton("Answer", "False", false)
+            @Html.Label("B.   False")
+
+        </p>
+
+        <p>2. Javascript File has extension </p>
+        <p>
+            
+            @Html.RadioButton("Js", "True", false)
+            @Html.Label("A.   .js")
+        </p>
+        <p>
+            
+            @Html.RadioButton("Js", "False", false)
+            @Html.Label("B.   .jc")
+        </p>
+
+        <p>3. You can target which elements with Javascript</p>
+        <p>
+            
+            @Html.CheckBox("chk", "BOM")
+            @Html.Label("A.   BOM")
+        </p>
+        <p>
+            
+            @Html.CheckBox("chk1", "DOM")
+            @Html.Label("B.   DOM")
+        </p>
+        <p>
+            
+            @Html.CheckBox("chk2", "NONE")
+            @Html.Label("C.   NONE")
+        </p>
+        <p>4. Inside which HTML element do we put the JavaScript? </p>
+        <p>
+            
+            @Html.RadioButton("tag", "False", false)
+            @Html.Label("A.   <java>")
+        </p>
+        <p>
+            
+            @Html.RadioButton("tag", "False", false)
+            @Html.Label("B.   <javaScript>")
+        </p>
+        <p>
+            
+            @Html.RadioButton("tag", "True", false)
+            @Html.Label("C.   <Script>")
+        </p>
+        <p>
+            5.Where is the correct place to insert a JavaScript?        
+    </p>
+        
+        <p>
+            
+            @Html.RadioButton("tag1", "False", false)
+            @Html.Label("B.  The <head> section")
+        </p>
+        <p>
+           
+            @Html.RadioButton("tag1", "True", false)
+            @Html.Label("A.  Both the <head> section and the <body> section are correct")
+        </p>
+        <p>
+            
+            @Html.RadioButton("tag1", "False", false)
+            @Html.Label("C.   The <body> section")
+        </p>
+        
+            <p>
+                6.How do you write "Hello World" in an alert box?
+            </p>
+
+            <p>
+
+                @Html.RadioButton("tag2", "False", false)
+                @Html.Label(" msgBox(\"Hello World\");")
+            </p>
+            <p>
+
+                @Html.RadioButton("tag2", "True", false)
+                @Html.Label("alert(\"Hello World\");")
+            </p>
+            <p>
+
+                @Html.RadioButton("tag2", "False", false)
+                @Html.Label("alertBox(\"Hello World\");")
+            </p>
+            <p>
+
+                @Html.RadioButton("tag2", "False", false)
+                @Html.Label("msg(\"Hello World\");")
+            </p>
+
+           <br/>
+
+<input type="submit"  style="color:black; border-radius:10px;" value="Fininsh" />
+
+
+
+    }
+</div>

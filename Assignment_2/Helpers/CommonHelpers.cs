@@ -17,8 +17,9 @@ namespace Assignment_2.Helpers
             UserLog userlog = new UserLog();
             userlog.Id = Guid.NewGuid();
             userlog.UserID = _userId;
-            userlog.Login = null;
+            userlog.Login = DateTime.Now;
             userlog.Quiz = null;
+            userlog.ActivityAccessed = null;
 
             using (var db = new MyLearnDBEntities())
             {
@@ -29,15 +30,30 @@ namespace Assignment_2.Helpers
 
         public void AddLog_Login(string _userId)
         {
-            using(var db = new MyLearnDBEntities())
+            try
             {
-                var _result = db.UserLogs.SingleOrDefault(b => b.UserID == _userId);
-                if(_result != null)
+                using (var db = new MyLearnDBEntities())
                 {
-                    _result.Login = DateTime.Now;
-                    db.SaveChanges();
+                    var _result = db.UserLogs.SingleOrDefault(b => b.UserID == _userId);
+                    if (_result != null)
+                    {
+                        _result.Login = DateTime.Now;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        Add_Log(_userId);
+
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+
+                
+            }
+
+           
         }
 
         public void AddLog_Quiz(string _userId)
