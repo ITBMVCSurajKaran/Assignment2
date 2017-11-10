@@ -376,6 +376,7 @@
     <Content Include="Views\JavascriptBeginner\Chapter7.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter8.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter9.cshtml" />
+    <Content Include="Views\Home\MyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Assignment_2.Helpers;
 
 namespace Assignment_2.Controllers
 {
     public class QuizController : Controller
     {
         // GET: Quiz
-        //[Authorize(Roles ="user")]
+        [Authorize(Roles = "Student,Teacher,Admin")]
         [HttpGet]
         public ActionResult QuizOne()
         {
             return View();
         }
 
+        [Authorize(Roles = "Student,Teacher,Admin")]
         [HttpPost]
-        public ActionResult ProcessResult(string Answer, string js, bool chk, bool chk1, bool chk2,string tag,string tag1,string tag2)
+        public ActionResult ProcessResult(string Answer, string js, bool chk, bool chk1, bool chk2,string tag,string tag1,string tag2,string q7,string q8,string q9,string q10)
         {
 
-            var n = 0;
+            int n = 0;
             ViewBag.answer = Answer;
             if (ViewBag.answer == "True")
             {
@@ -55,12 +57,31 @@ namespace Assignment_2.Controllers
             {
                 n = n + 1;
             }
+            ViewBag.q7 = q7;
+            if(ViewBag.q7 == "True")
+            {
+                n = n + 1;
+            }
+            ViewBag.q8 = q8;
+            if (ViewBag.q8 == "True")
+            {
+                n = n + 1;
+            }
+            ViewBag.q9 = q9;
+            if (ViewBag.q9 == "True")
+            {
+                n = n + 1;
+            }
+            ViewBag.q10 = q10;
+            if (ViewBag.q10 == "True")
+            {
+                n = n + 1;
+            }
 
+            var help = new StudentHelpers();
+            help.SaveQuizResult(n,10);
 
-            ViewBag.result = n;
-            
-          
-
+            ViewBag.result = n*10;
             return View();
         }
     }

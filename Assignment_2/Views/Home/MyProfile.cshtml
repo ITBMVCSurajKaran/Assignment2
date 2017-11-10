@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Services
+                <small>What We Do</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="active">My Profile</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Service Tabs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Karan Sharma</h2>
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active">
+                    <a data-toggle="tab" href="#service-one">Personal Details</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#service-two">User Preferences</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#service-three">Current Courses</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#service-four">Quiz Results</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#service-five">Announcments</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div id="service-one" class="tab-pane fade in active">
+                    <i class="fa fa-gear pull-left fa-4x"></i>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Name:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="name" placeholder="Karan Sharma">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="karank@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="user">Username:</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="user" placeholder="Karan">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd">Phone No. :</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="pwd" placeholder="0224154322">
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-warning">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="service-two" class="tab-pane fade">
+                    <i class="fa fa-gears pull-left fa-4x"></i>
+                    <form>
+                        <div class="form-group">
+                            <label for="sel1">Please Choose a Theme:</label>
+                            <select class="form-control" id="sel1">
+                                <option value="Black">Dark</option>
+                                <option value="White">Light</option>
+                                <option value="dual">Dual</option>
+                                <option value="red">Red</option>
+                            </select>
+                               </div>
+                        <div class="form-group">
+                            
+                                <button type="submit" class="btn btn-warning">Update</button>
+                            
+                        </div>
+                    </form>
+                   
+                </div>
+                <div id="service-three" class="tab-pane fade">
+                    <i class="fa fa-magic pull-left fa-4x"></i>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="page-header">More Courses</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>JAVASCRIPT</h3>
+                            <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>HTML</h3>
+                            <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>CSS</h3>
+                            <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="service-four" class="tab-pane fade table">
+                    <i class="fa fa-flask pull-left fa-4x"></i>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Quiz</th>
+                                <th>Maximum Marks</th>
+                                <th>You Scored</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Karan</td>
+                                <td>Karank@gmail.com</td>
+                                <td>Javascript Beginner </td>
+                                <td>100%</td>
+                                <td>80%</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                
+
+
+
+                </div>
+                <div id="service-five" class="tab-pane fade">
+                    <i class="fa fa-flag pull-left fa-4x"></i>
+                    <div class="alert alert-danger">
+                      <h1>  <strong>Notification: </strong></h1>
+                        Bootstrap essentials training course is available! get enrolled ASAP.<br/>
+                        50% Discount available for first 1000 student! Hurry!
+                    </div>
+                    <br/>
+                    <div class="alert alert-danger">
+                        <h1>  <strong>Notification: </strong></h1>
+                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
+                        50% Discount available for first 1000 student! Hurry!
+                    </div>
+                    <br />
+                    <div class="alert alert-danger">
+                        <h1>  <strong>Notification: </strong></h1>
+                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
+                        50% Discount available for first 1000 student! Hurry!
+                    </div>
+                    <br />
+                    <div class="alert alert-danger">
+                        <h1>  <strong>Notification: </strong></h1>
+                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
+                        50% Discount available for first 1000 student! Hurry!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

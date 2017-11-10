@@ -45,6 +45,10 @@ namespace Assignment_2.Controllers
         {
             return View();
         }
+        public ActionResult MyProfile()
+        {
+            return View();
+        }
        
 
     }
