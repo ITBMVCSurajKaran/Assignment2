@@ -69,5 +69,17 @@ namespace Assignment_2.Helpers
             }
         }
 
+
+        public void Add_Student_Course(string userId, string CourseId)
+        {
+
+            CourseDetail detail = new CourseDetail();
+
+            detail.Id = Guid.NewGuid();
+          //  detail.UserId = 
+
+        }
+
+
     }
 }

@@ -5,10 +5,8 @@
     Layout = "~/Views/Shared/_LayoutOperation.cshtml";
 }
 
-<h2>Add Role</h2>
-
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1 class="page-header">Add Role</h1>
+    <h1 class="page-header">System Roles</h1>
 
     <ul>
         @foreach (var item in Model)
@@ -19,7 +17,7 @@
         }
     </ul>
 
-    <h3>   @Html.ActionLink("Click to Create New Role", "Create", "Role") </h3>
+    <h3>   @Html.ActionLink("Add Role", "AddRole", "AdminHome",new {@Class= "btn btn-primary" }) </h3>
 
 </div>
 

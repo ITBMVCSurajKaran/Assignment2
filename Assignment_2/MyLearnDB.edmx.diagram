@@ -13,6 +13,14 @@
         <EntityTypeShape EntityType="MyLearnDBModel.GroupMaster" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="MyLearnDBModel.QuizDetail" Width="1.5" PointX="6.75" PointY="4.75" />
         <EntityTypeShape EntityType="MyLearnDBModel.UserPreferenceMaster" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MyLearnDBModel.C__MigrationHistory" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetRole" Width="1.5" PointX="3.375" PointY="10.5" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUserClaim" Width="1.5" PointX="7.875" PointY="11.625" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUserLogin" Width="1.5" PointX="7.875" PointY="9" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUser" Width="1.5" PointX="5.625" PointY="9.375" />
+        <AssociationConnector Association="MyLearnDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MyLearnDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MyLearnDBModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

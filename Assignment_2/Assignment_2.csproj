@@ -194,6 +194,18 @@
     <Compile Include="Areas\Administrator\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Administrator\Controllers\GroupMastersController.cs" />
     <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="City.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
@@ -208,6 +220,9 @@
     <Compile Include="CourseMaster.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,10 +232,12 @@
     <Compile Include="GroupMaster.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AdminHelpers.cs" />
     <Compile Include="Helpers\CommonHelpers.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="Helpers\StudentHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GroupDetailView.cs" />
     <Compile Include="Models\AppEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

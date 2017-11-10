@@ -11,11 +11,27 @@
 
     @using (Html.BeginForm())
     {
-        <p> Enter User Role Name:</p>
+        @*<p> Enter User Role Name:</p>
 
         @Html.EditorFor(m => m.Name)
-        <input type="submit" value="Create Role" />
+        <input name="Name" class="form-control" id="Name" type="text" value="">
+        <button class="btn btn-primary" type="submit">Create</button>*@
+       
+        <div class=" col-sm-5 well">
+            <h4>Role Name</h4>
+            <div class="input-group">
+                <input name="Name" class="form-control" id="Name" type="text" value="">
+
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" onclick="$('#dummy').click();" type="submit">Create</button>
+                </span>
+
+            </div>
+            <!-- /input-group -->
+        </div>
     }
+
+    
 
 
 </div>

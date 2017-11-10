@@ -10,7 +10,7 @@ namespace Assignment_2.Areas.Administrator.Controllers
 {
     public class AdminHomeController : Controller
     {
-        
+
         ApplicationDbContext context;
 
         public AdminHomeController()
@@ -54,8 +54,11 @@ namespace Assignment_2.Areas.Administrator.Controllers
         #region Roles Management
 
 
-
-        // GET: Role
+        
+        /// <summary>
+        /// Get all roles
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         public ActionResult Roles()
         {
@@ -71,6 +74,11 @@ namespace Assignment_2.Areas.Administrator.Controllers
                 return View();
             }
         }
+
+        /// <summary>
+        /// Add new role get
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         public ActionResult AddRole()
         {
@@ -78,13 +86,32 @@ namespace Assignment_2.Areas.Administrator.Controllers
             return View(Role);
         }
 
+        /// <summary>
+        /// Add new role Post 
+        /// </summary>
+        /// <param name="Role"></param>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult AddRole(IdentityRole Role)
         {
-            context.Roles.Add(Role);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                if (!string.IsNullOrEmpty(Role.Name))
+                {
+                    context.Roles.Add(Role);
+                    context.SaveChanges();
+                    return RedirectToAction("Roles");
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }
+            return View();
+
+
         }
         #endregion
     }
