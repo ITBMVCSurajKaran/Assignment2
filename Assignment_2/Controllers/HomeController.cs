@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Assignment_2.Models;
+using Assignment_2.Helpers;
 
 namespace Assignment_2.Controllers
 {
     public class HomeController : Controller
     {
+      
         public ActionResult Index()
         {
 
@@ -45,9 +49,18 @@ namespace Assignment_2.Controllers
         {
             return View();
         }
+
+        [Authorize]
         public ActionResult MyProfile()
         {
-            return View();
+            var x = User.Identity.GetUserId() ;
+
+            StudentDetailModel _return = new StudentDetailModel();
+            StudentHelpers helpers = new StudentHelpers();
+
+            _return = helpers.get_Student_ById(x.ToString());
+              
+            return View(_return);
         }
        
 

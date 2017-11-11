@@ -1,8 +1,14 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
+
+@model Assignment_2.Models.StudentDetailModel
+
 @{
     ViewBag.Title = "MyProfile";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
 }
+
 
 <div class="container">
     <div class="row">
@@ -22,7 +28,9 @@
     <!-- Service Tabs -->
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">Karan Sharma</h2>
+
+            <h2 class="page-header">HELLO! @User.Identity.GetUserName()</h2>
+
             <ul class="nav nav-tabs" id="myTab">
                 <li class="active">
                     <a data-toggle="tab" href="#service-one">Personal Details</a>
@@ -30,12 +38,7 @@
                 <li>
                     <a data-toggle="tab" href="#service-two">User Preferences</a>
                 </li>
-                <li>
-                    <a data-toggle="tab" href="#service-three">Current Courses</a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#service-four">Quiz Results</a>
-                </li>
+                
                 <li>
                     <a data-toggle="tab" href="#service-five">Announcments</a>
                 </li>
@@ -44,35 +47,41 @@
                 <div id="service-one" class="tab-pane fade in active">
                     <i class="fa fa-gear pull-left fa-4x"></i>
                     <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="name">Name:</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="name" placeholder="Karan Sharma">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email:</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="karank@gmail.com">
-                            </div>
-                        </div>
+                        @*<div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="name" placeholder="Karan Sharma">
+                                </div>
+                            </div>*@
+
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="user">Username:</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="user" placeholder="Karan">
+
+                                <input type="text" class="form-control" id="user" value="@User.Identity.GetUserName()">
                             </div>
                         </div>
-                         <div class="form-group">
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Email:</label>
+                            <div class="col-sm-10">
+
+                                <input type="email" class="form-control" id="email" value="@Model.Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="control-label col-sm-2" for="pwd">Phone No. :</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="pwd" placeholder="0224154322">
+                                <input type="number" class="form-control" id="pwd" value="@Model.PhoneNumber">
                             </div>
                         </div>
-                        
-                        
+
+
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-warning">Update</button>
+                                <br /><h3><u> @Html.ActionLink("Change Password", "ChangePassword", "Manage") </u></h3>
                             </div>
                         </div>
                     </form>
@@ -88,16 +97,16 @@
                                 <option value="dual">Dual</option>
                                 <option value="red">Red</option>
                             </select>
-                               </div>
+                        </div>
                         <div class="form-group">
-                            
-                                <button type="submit" class="btn btn-warning">Update</button>
-                            
+
+                            <button type="submit" class="btn btn-warning">Update</button>
+
                         </div>
                     </form>
-                   
+
                 </div>
-                <div id="service-three" class="tab-pane fade">
+                @*<div id="service-three" class="tab-pane fade">
                     <i class="fa fa-magic pull-left fa-4x"></i>
                     <div class="row">
                         <div class="col-lg-12">
@@ -122,8 +131,8 @@
                             <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
-                </div>
-                <div id="service-four" class="tab-pane fade table">
+                </div>*@
+                @*<div id="service-four" class="tab-pane fade table">
                     <i class="fa fa-flask pull-left fa-4x"></i>
 
                     <table class="table">
@@ -149,19 +158,19 @@
                             </tr>
                         </tbody>
                     </table>
-                
 
 
 
-                </div>
+
+                </div>*@
                 <div id="service-five" class="tab-pane fade">
                     <i class="fa fa-flag pull-left fa-4x"></i>
                     <div class="alert alert-danger">
-                      <h1>  <strong>Notification: </strong></h1>
-                        Bootstrap essentials training course is available! get enrolled ASAP.<br/>
+                        <h1>  <strong>Notification: </strong></h1>
+                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
                         50% Discount available for first 1000 student! Hurry!
                     </div>
-                    <br/>
+                    <br />
                     <div class="alert alert-danger">
                         <h1>  <strong>Notification: </strong></h1>
                         Bootstrap essentials training course is available! get enrolled ASAP.<br />

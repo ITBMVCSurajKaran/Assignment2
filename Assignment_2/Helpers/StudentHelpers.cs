@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Assignment_2.Models;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Assignment_2.Helpers
 {
@@ -205,6 +208,31 @@ namespace Assignment_2.Helpers
 
             }
             return student;
+        }
+        /// <summary>
+        /// Get student personal details
+        /// </summary>
+        /// <param name="user_id"></param>
+        /// <returns></returns>
+        public StudentDetailModel get_Student_ById(string user_id)
+        {
+            var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["_MyLearnDBEntities"].ToString());
+            var dbcommand = new SqlCommand();
+            dbcommand.Connection = dbcon;
+            dbcommand.CommandText = "select * from AspNetUsers where id = @user_id";
+            dbcommand.Parameters.AddWithValue("@user_id", SqlDbType.UniqueIdentifier).Value = user_id;
+            dbcon.Open();
+            var reader = dbcommand.ExecuteReader();
+            var model = new StudentDetailModel();
+            while (reader.Read())
+            {
+                model.StudentId = reader["Id"].ToString();
+                model.StudentName = reader["UserName"].ToString();
+                model.Email = reader["Email"].ToString();
+                model.PhoneNumber = reader["PhoneNumber"].ToString();
+            }
+            dbcon.Close();
+            return model;
         }
 
 
