@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 *.config
 Assignment_2/Web.config
+*.config

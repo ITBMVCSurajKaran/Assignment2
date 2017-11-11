@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 
 
 namespace Assignment_2.Helpers
@@ -50,10 +51,10 @@ namespace Assignment_2.Helpers
             catch (Exception ex)
             {
 
-                
+
             }
 
-           
+
         }
 
         public void AddLog_Quiz(string _userId)
@@ -68,18 +69,5 @@ namespace Assignment_2.Helpers
                 }
             }
         }
-
-
-        public void Add_Student_Course(string userId, string CourseId)
-        {
-
-            CourseDetail detail = new CourseDetail();
-
-            detail.Id = Guid.NewGuid();
-          //  detail.UserId = 
-
-        }
-
-
     }
 }

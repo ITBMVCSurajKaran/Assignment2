@@ -11,15 +11,10 @@ namespace Assignment_2
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class GroupMaster
     {
         public System.Guid Id { get; set; }
-
-        [Required]
-        [Display(Name = "Group Name")]
-        [DataType(DataType.Text)]
         public string GroupName { get; set; }
         public Nullable<System.Guid> CreatedBy { get; set; }
         public Nullable<System.Guid> CourseID { get; set; }

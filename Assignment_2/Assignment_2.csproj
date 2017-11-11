@@ -193,6 +193,7 @@
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Administrator\Controllers\GroupMastersController.cs" />
+    <Compile Include="Areas\Instructor\Controllers\StudentReportController.cs" />
     <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
     <Compile Include="AspNetRole.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
@@ -232,7 +233,7 @@
     <Compile Include="GroupMaster.cs">
       <DependentUpon>MyLearnDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\AdminHelpers.cs" />
+    <Compile Include="Helpers\AdministrationHelpers.cs" />
     <Compile Include="Helpers\CommonHelpers.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="Helpers\StudentHelpers.cs" />
@@ -241,6 +242,9 @@
     <Compile Include="Models\AppEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\GroupViewModel.cs" />
+    <Compile Include="Models\StudentDetailModel.cs" />
+    <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="MyLearnDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,6 +298,8 @@
     <Content Include="Areas\Administrator\Views\GroupMasters\Details.cshtml" />
     <Content Include="Areas\Administrator\Views\GroupMasters\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\GroupMasters\Index.cshtml" />
+    <Content Include="Areas\Instructor\Views\StudentReport\Index.cshtml" />
+    <Content Include="Areas\Instructor\Views\StudentReport\_StudentDetails.cshtml" />
     <None Include="js\jquery-1.10.2.intellisense.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -356,13 +362,6 @@
     <Content Include="Views\Home\_Lesson1.cshtml" />
     <Content Include="Views\Home\Editor.cshtml" />
     <Content Include="Views\Home\Content.cshtml" />
-    <EntityDeploy Include="MyLearnDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MyLearnDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="MyLearnDB.edmx.diagram">
-      <DependentUpon>MyLearnDB.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Quiz\QuizOne.cshtml" />
     <Content Include="Views\Quiz\ProcessResult.cshtml" />
     <Content Include="Views\JavascriptBeginner\Index.cshtml" />
@@ -377,13 +376,19 @@
     <Content Include="Views\JavascriptBeginner\Chapter8.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter9.cshtml" />
     <Content Include="Views\Home\MyProfile.cshtml" />
+    <EntityDeploy Include="MyLearnDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyLearnDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MyLearnDB.edmx.diagram">
+      <DependentUpon>MyLearnDB.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Models\" />
     <Folder Include="Areas\Administrator\Views\Group\" />
     <Folder Include="Areas\Administrator\Views\Shared\" />
-    <Folder Include="Areas\Instructor\Controllers\" />
     <Folder Include="Areas\Instructor\Models\" />
     <Folder Include="Areas\Instructor\Views\Group\" />
     <Folder Include="Areas\Instructor\Views\Shared\" />

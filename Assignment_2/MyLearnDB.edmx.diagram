@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2439577fdf1b430094a752d29a43d74b" Name="Diagram1">
-        <EntityTypeShape EntityType="MyLearnDBModel.City" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.UserLog" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.CourseDetail" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.CourseMaster" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.GroupDetail" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.GroupMaster" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.QuizDetail" Width="1.5" PointX="6.75" PointY="4.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.UserPreferenceMaster" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.C__MigrationHistory" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="MyLearnDBModel.AspNetRole" Width="1.5" PointX="3.375" PointY="10.5" />
-        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUserClaim" Width="1.5" PointX="7.875" PointY="11.625" />
-        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUserLogin" Width="1.5" PointX="7.875" PointY="9" />
-        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUser" Width="1.5" PointX="5.625" PointY="9.375" />
-        <AssociationConnector Association="MyLearnDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
-        <AssociationConnector Association="MyLearnDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
-        <AssociationConnector Association="MyLearnDBModel.AspNetUserRoles" />
+      <Diagram DiagramId="f8817ea616dd4158a60aa80d27e06cf8" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="MyLearnDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.City" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.CourseDetail" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.CourseMaster" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.GroupDetail" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.GroupMaster" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.QuizDetail" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.UserLog" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyLearnDBModel.UserPreferenceMaster" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="MyLearnDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyLearnDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyLearnDBModel.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

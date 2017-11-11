@@ -25,18 +25,18 @@ namespace Assignment_2
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<UserLog> UserLogs { get; set; }
-        public virtual DbSet<CourseDetail> CourseDetails { get; set; }
-        public virtual DbSet<CourseMaster> CourseMasters { get; set; }
-        public virtual DbSet<GroupDetail> GroupDetails { get; set; }
-        public virtual DbSet<GroupMaster> GroupMasters { get; set; }
-        public virtual DbSet<QuizDetail> QuizDetails { get; set; }
-        public virtual DbSet<UserPreferenceMaster> UserPreferenceMasters { get; set; }
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<CourseDetail> CourseDetails { get; set; }
+        public virtual DbSet<CourseMaster> CourseMasters { get; set; }
+        public virtual DbSet<GroupDetail> GroupDetails { get; set; }
+        public virtual DbSet<GroupMaster> GroupMasters { get; set; }
+        public virtual DbSet<QuizDetail> QuizDetails { get; set; }
+        public virtual DbSet<UserLog> UserLogs { get; set; }
+        public virtual DbSet<UserPreferenceMaster> UserPreferenceMasters { get; set; }
     }
 }

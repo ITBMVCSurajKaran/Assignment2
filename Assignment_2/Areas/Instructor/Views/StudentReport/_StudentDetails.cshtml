@@ -1,0 +1,69 @@
+﻿@using Assignment_2.Models;
+@using Assignment_2.Helpers;
+
+
+@model Assignment_2.GroupMaster
+
+@{
+    MyLearnDBEntities db = new MyLearnDBEntities();
+
+    List<GroupDetail> gd = new List<GroupDetail>();
+    gd = db.GroupDetails.Where(x => x.GroupId == Model.Id).ToList();
+
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Progress</th>
+            <th>Quiz Attampt</th>
+            <th>Activity</th>
+            <th>Last Accessed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in gd)
+        {
+            <tr>
+                @{
+                    int quizCount = 0;
+                    string ids = m.UserId.ToString();
+
+                    AdministrationHelpers ds = new AdministrationHelpers();
+
+                    StudentDetailModel studentDetail = ds.get_Student_ById(ids);
+
+                    var progressStatus = db.CourseDetails.SingleOrDefault(z => z.UserId == m.UserId && z.CourseId == Model.CourseID);
+                    if (progressStatus.ProgressStatus == 100)
+                    {
+                        Guid QId = Guid.Parse("1112FEEB-2B62-4031-B208-3D1F54178BDA");
+                        quizCount = db.QuizDetails.Where(v => v.UserId == m.UserId
+                                && v.QuizId == QId).Count();
+                    }
+                    else
+                    {
+                        quizCount = 0;
+                    }
+
+                }
+                <td>@studentDetail.StudentName</td>
+              
+                @if (Model.CourseID.ToString() == "3e851245-056e-40ba-8767-5c662f0d0c86")
+                {
+                    <td>JavascriptBeginner</td>
+                }
+                else
+                {
+                    <td>JavascriptAdvanced</td>
+                }
+                <td>@progressStatus.ProgressStatus%</td>
+
+                <td>@quizCount</td>
+
+                <td>@progressStatus.StatusTotal</td>
+                <td>@progressStatus.LastAccessed.Value.ToShortDateString()</td>
+            </tr>
+                    }
+    </tbody>
+</table>

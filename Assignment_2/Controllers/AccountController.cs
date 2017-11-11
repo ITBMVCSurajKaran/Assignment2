@@ -152,9 +152,7 @@ namespace Assignment_2.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-
-            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
-                                            .ToList(), "Id", "Name");
+            
             return View();
         }
 
@@ -181,7 +179,7 @@ namespace Assignment_2.Controllers
 
 
                     //Assign Role to user Here      
-                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                    await this.UserManager.AddToRoleAsync(user.Id, "Student");
                     //Ends Here    
 
                     CommonHelpers commonHelpers = new CommonHelpers();
@@ -191,8 +189,6 @@ namespace Assignment_2.Controllers
 
                 }
 
-                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
-                                          .ToList(), "Name", "Name");
 
                 AddErrors(result);
             }
