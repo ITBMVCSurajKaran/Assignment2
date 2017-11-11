@@ -1,10 +1,16 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model List<Assignment_2.Models.AnnouncementViewModel>
 
-    string lessonName = "_Lesson1";
+@{
+    ViewBag.Title = "Home Page";
 }
 
-<div>
+@foreach (var m in Model)
 
-    @Html.Partial(lessonName);   
-</div>
+{
+    <i class="fa fa-flag pull-left fa-4x"></i>
+    <div class="alert alert-danger">
+        <h1>  <strong> @m.Title  @m.DateCreated</strong></h1>
+        @m.Message
+        <h5>  @m.DateCreated </h5>
+    </div>
+}

@@ -32,18 +32,44 @@
     <!-- Service Paragraphs -->
     <div class="row">
         <div class="col-md-8">
-            <h2 class="page-header">Some Javescript Basics : Chapter-1</h2>
-
-            <textarea cols=”80″ rows=”85″ class=" text-val" disabled> <script>
-document.getElementById('demo').innerHTML = "Hello";
-</script></textarea></br>
-            <a href="#" class="btn btn-primary"> << Prev </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary">  Next   >></a>
+            <h2 class="page-header">Some Javescript Basics : Chapter-4</h2>
+<textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled>                
+    <script>
+              document.getElementById("p2").style.color = "blue";
+              document.getElementById("p2").style.fontFamily = "Arial";
+              document.getElementById("p2").style.fontSize = "larger";
+</script>
+</textarea> <br />
+            <a href="#" class="btn btn-primary"> << Prev </a> <a href="#" class="btn btn-primary">  Next   >></a>
 
         </div>
         <div class="col-md-4">
             <h2 class="page-header">Want to try yourself!</h2>
-            <p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
-            <a href="#" class="btn btn-primary">Try Now!</a>
+            <p>You can test your javascript code in a editor to see the output from the code.</p>
+            @using (Html.BeginForm("Editor", "Home", FormMethod.Post, new { target = "_blank" }))
+            {
+
+                <textarea hidden name="editorValue" cols=”80″ rows=”85″ class=" text-val"> 
+                    <!DOCTYPE html>
+<html>
+<body>
+
+<p id="p1">Hello World!</p>
+<p id="p2">Hello World!</p>
+
+<script>
+              document.getElementById("p2").style.color = "blue";
+              document.getElementById("p2").style.fontFamily = "Arial";
+              document.getElementById("p2").style.fontSize = "larger";
+</script>
+
+<p>The paragraph above was changed by a script.</p>
+
+</body>
+</html> </textarea>
+
+                <button type="submit" class="btn btn-primary">Try Now!</button>
+            }
         </div>
     </div>
     <!-- /.row -->
@@ -124,6 +150,10 @@ document.getElementById('demo').innerHTML = "Hello";
     </div>
     <!-- /.row -->
 </div>
+
+
+
+
 
 
 

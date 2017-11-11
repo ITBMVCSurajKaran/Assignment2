@@ -32,69 +32,40 @@
     <!-- Service Paragraphs -->
     <div class="row">
         <div class="col-md-8">
-            <h2 class="page-header">Some Javescript Basics : Chapter-1</h2>
-
-            <textarea cols=”80″ rows=”85″ class=" text-val" disabled> <script>
-document.getElementById('demo').innerHTML = "Hello";
-</script></textarea></br>
-            <a href="#" class="btn btn-primary"> << Prev </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary">  Next   >></a>
+            <h2 class="page-header">Some Javescript Basics : Chapter-9</h2>
+<textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled>                
+<script>
+    document.write(Date());
+</script>
+</textarea> <br />
+            <a href="#" class="btn btn-primary"> << Prev </a> <a href="#" class="btn btn-primary">  Next   >></a>
 
         </div>
         <div class="col-md-4">
             <h2 class="page-header">Want to try yourself!</h2>
-            <p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
-            <a href="#" class="btn btn-primary">Try Now!</a>
-        </div>
-    </div>
-    <!-- /.row -->
-    <!-- Service Tabs -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">More About Javascript</h2>
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="active">
-                    <a data-toggle="tab" href="#service-one">Javascript Power</a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#service-two">Learning Speed</a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#service-three">JavaScript References</a>
-                </li>
+            <p>You can test your javascript code in a editor to see the output from the code.</p>
+            @using (Html.BeginForm("Editor", "Home", FormMethod.Post, new { target = "_blank" }))
+            {
 
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div id="service-one" class="tab-pane fade in active">
-                    <i class="fa fa-gear pull-left fa-4x"></i>
-                    <p>
-                        JavaScript and Java are completely different languages, both in concept and design.JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.
-                        ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.
-                    </p>
+                <textarea hidden name="editorValue" cols=”80″ rows=”85″ class=" text-val"> 
+                <!DOCTYPE html>
 
-                    <p>You can read more about the different JavaScript versions in the chapter JS Versions.</p>
-                </div>
-                <div id="service-two" class="tab-pane fade">
-                    <i class="fa fa-gears pull-left fa-4x"></i>
-                    <p>
-                        In this tutorial, the learning speed is your choice.
 
-                        Everything is up to you.
 
-                        If you are struggling, take a break, or reread the material.
+<html>
+<body>
 
-                        Always make sure you understand all the "Try-it-Yourself" examples.
-                    </p>
-                </div>
-                <div id="service-three" class="tab-pane fade">
-                    <i class="fa fa-magic pull-left fa-4x"></i>
-                    <p>
-                        The reference contains examples for all properties and methods, and is continuously updated according to the latest web standards.
+<script>
+    document.write(Date());
+</script>
 
-                        Complete JavaScript Reference
-                    </p>
-                </div>
+</body>
+</html> 
+                    
+ </textarea>
 
-            </div>
+                <button type="submit" class="btn btn-primary">Try Now!</button>
+            }
         </div>
     </div>
     <!-- /.row -->
@@ -124,6 +95,8 @@ document.getElementById('demo').innerHTML = "Hello";
     </div>
     <!-- /.row -->
 </div>
+
+
 
 
 

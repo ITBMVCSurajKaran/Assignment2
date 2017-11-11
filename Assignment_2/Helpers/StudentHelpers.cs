@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace Assignment_2.Helpers
 {
     public class StudentHelpers
@@ -200,6 +201,7 @@ namespace Assignment_2.Helpers
                     student.StudentQuizDetails = db.QuizDetails.Where(b => b.UserId == UserId).ToList();
                     student.StudentPreferenceMaster = db.UserPreferenceMasters.SingleOrDefault(b => b.UserID == UserId);
                     student.StudentGroupdetails = db.GroupDetails.Where(b => b.UserId == UserId).ToList();
+                    student.Announcement = db.Announcements.Where(b => b.UserType == "Student" && b.IsEnable == true).ToList();
                 }
             }
             catch (Exception)
@@ -234,7 +236,40 @@ namespace Assignment_2.Helpers
             dbcon.Close();
             return model;
         }
+        public List<AnnouncementViewModel> Get_announcemnets()
+        {
+            var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["_MyLearnDBEntities"].ToString());
+            var dbcommand = new SqlCommand();
+            dbcommand.Connection = dbcon;
+            dbcommand.CommandText = "select top 2 * from Announcement";
+            dbcon.Open();
+            var reader = dbcommand.ExecuteReader();
+            var model = new List<AnnouncementViewModel>();
+            while (reader.Read())
+            {
+                var item = new AnnouncementViewModel();
+
+                item.Title = reader["Title"].ToString();
+                item.Message = reader["Message"].ToString();
+                item.DateCreated = reader["DateCreated"].ToString();
+                model.Add(item);
+            }
+            dbcon.Close();
+            return model;
+        }
 
 
+
+
+
+
+
+
+        //public class DetailAnnouncment
+        //{
+        //    public StudentDetailModel StudentDetailModel { get; set; }
+        //    public Announcement Announcement { get; set; }
+
+        //}
     }
 }

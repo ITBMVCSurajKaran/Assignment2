@@ -94,5 +94,25 @@ namespace Assignment_2.Helpers
             dbcon.Close();
             return model;
         }
+
+        //public CourseDetail getdata(Guid ids, int status)
+        //{
+
+        //    CourseDetail cd = new CourseDetail();
+        //    using (var db = new MyLearnDBEntities())
+        //    {
+
+        //        var a = (from x in db.CourseDetails
+        //                 join y in db.CourseMasters on x.UserId equals y.Id
+        //                 where x.Id == ids
+        //                 && x.ProgressStatus == status
+        //                 select new
+        //                 {
+        //                     idm = x.Id,
+        //                     status = x.ProgressStatus
+        //                 }).ToList().Where(x => x.idm == Guid.Empty).Take(10).Sum(10);
+        //    }
+        //    return cd;
+        //}
     }
 }

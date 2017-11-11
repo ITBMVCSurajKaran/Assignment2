@@ -33,17 +33,42 @@
     <div class="row">
         <div class="col-md-8">
             <h2 class="page-header">Some Javescript Basics : Chapter-1</h2>
+            <textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled> 
 
-            <textarea cols=”80″ rows=”85″ class=" text-val" disabled> <script>
-document.getElementById('demo').innerHTML = "Hello";
-</script></textarea></br>
-            <a href="#" class="btn btn-primary"> << Prev </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary">  Next   >></a>
+
+                
+<button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Click Me!</button>
+
+
+
+</textarea> <br/>
+            <a href="#" class="btn btn-primary"> << Prev </a> <a href="#" class="btn btn-primary">  Next   >></a>
 
         </div>
         <div class="col-md-4">
             <h2 class="page-header">Want to try yourself!</h2>
-            <p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
-            <a href="#" class="btn btn-primary">Try Now!</a>
+            <p>You can test your javascript code in a editor to see the output from the code.</p>
+            @using (Html.BeginForm("Editor", "Home", FormMethod.Post,new { target = "_blank" }))
+            {
+                @*<input type="text" hidden name="chapter1" cols=”80″ rows=”85″ class=" text-val" value="<script>
+document.getElementById('demo').innerHTML = 'Hello'; </script>" >*@
+                <textarea hidden name="editorValue" cols=”80″ rows=”85″ class=" text-val" > 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Click Me!</button>
+
+</body>
+</html>
+                  </textarea>
+
+                            <button type="submit"  class="btn btn-primary">Try Now!</button>
+            }
         </div>
     </div>
     <!-- /.row -->

@@ -7,23 +7,26 @@ using Microsoft.AspNet.Identity;
 using Assignment_2.Models;
 using Assignment_2.Helpers;
 
+
 namespace Assignment_2.Controllers
 {
     public class HomeController : Controller
     {
-      
+
         public ActionResult Index()
         {
+            
+            StudentHelpers helpers = new StudentHelpers();
+            var _return = helpers.Get_announcemnets();
+            return View(_return);
 
-            string karan = "Last change by suraj/karan"; 
-            return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
             // this testing git push by suraj patel
-           // int suraj = 10;
+            // int suraj = 10;
 
             return View();
         }
@@ -41,8 +44,10 @@ namespace Assignment_2.Controllers
 
             return View();
         }
-        public ActionResult Editor()
+        [ValidateInput(false)]
+        public ActionResult Editor(string editorValue)
         {
+            ViewBag.editorValue = editorValue;
             return View();
         }
         public ActionResult Content()
@@ -53,16 +58,18 @@ namespace Assignment_2.Controllers
         [Authorize]
         public ActionResult MyProfile()
         {
-            var x = User.Identity.GetUserId() ;
+            var x = User.Identity.GetUserId();
 
-            StudentDetailModel _return = new StudentDetailModel();
+            StudentViewModel _return = new StudentViewModel();
             StudentHelpers helpers = new StudentHelpers();
+            _return = helpers.Get_All_data_Student();
+            _return.StudentDetailModel = helpers.get_Student_ById(x.ToString());
 
-            _return = helpers.get_Student_ById(x.ToString());
-              
             return View(_return);
+            
+
         }
-       
+
 
     }
 }

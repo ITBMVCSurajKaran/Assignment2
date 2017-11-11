@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 
-@model Assignment_2.Models.StudentDetailModel
+@model Assignment_2.Models.StudentViewModel
 
 @{
     ViewBag.Title = "MyProfile";
@@ -67,13 +67,13 @@
                             <label class="control-label col-sm-2" for="email">Email:</label>
                             <div class="col-sm-10">
 
-                                <input type="email" class="form-control" id="email" value="@Model.Email">
+                                <input type="email" class="form-control" id="email" value="@Model.StudentDetailModel.Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="pwd">Phone No. :</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="pwd" value="@Model.PhoneNumber">
+                                <input type="number" class="form-control" id="pwd" value="@Model.StudentDetailModel.PhoneNumber">
                             </div>
                         </div>
 
@@ -165,29 +165,15 @@
                 </div>*@
                 <div id="service-five" class="tab-pane fade">
                     <i class="fa fa-flag pull-left fa-4x"></i>
+                    @foreach(var x in Model.Announcement) { 
                     <div class="alert alert-danger">
-                        <h1>  <strong>Notification: </strong></h1>
-                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
-                        50% Discount available for first 1000 student! Hurry!
+                        <h1>  <strong>@x.Title: </strong></h1>
+                       @x.Message
+                        <br />
+                        @x.DateCreated.Value.ToShortDateString() | @x.DateCreated.Value.ToShortTimeString()
                     </div>
                     <br />
-                    <div class="alert alert-danger">
-                        <h1>  <strong>Notification: </strong></h1>
-                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
-                        50% Discount available for first 1000 student! Hurry!
-                    </div>
-                    <br />
-                    <div class="alert alert-danger">
-                        <h1>  <strong>Notification: </strong></h1>
-                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
-                        50% Discount available for first 1000 student! Hurry!
-                    </div>
-                    <br />
-                    <div class="alert alert-danger">
-                        <h1>  <strong>Notification: </strong></h1>
-                        Bootstrap essentials training course is available! get enrolled ASAP.<br />
-                        50% Discount available for first 1000 student! Hurry!
-                    </div>
+                    }
                 </div>
             </div>
         </div>

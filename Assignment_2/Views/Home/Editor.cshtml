@@ -5,6 +5,7 @@
 
 }
 
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -30,8 +31,10 @@
     </script>
     <div class="row">
         <div class="col-md-6 portfolio-item">
-            <textarea spellcheck="false" class="form-control" id="htmlArea" rows="23">                  
-                </textarea>
+          <b>  <textarea spellcheck="false" class="form-control" style="overflow:hidden; color:red; font-size:15px;" id="htmlArea" rows="23" > 
+    @ViewBag.editorValue                
+ 
+   </textarea> </b>
             <div class="form-group col-lg-12">
                 <button class="btn btn-primary"  id="btnEdit" onclick="return btnEdit_onclick()">Run>></button>
             </div>

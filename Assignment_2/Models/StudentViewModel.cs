@@ -18,5 +18,8 @@ namespace Assignment_2.Models
         public UserPreferenceMaster StudentPreferenceMaster { get; set; }
 
         public List<GroupDetail> StudentGroupdetails { get; set; }
+            
+        public StudentDetailModel StudentDetailModel { get; set; }
+        public List<Announcement> Announcement { get; set; }
     }
 }

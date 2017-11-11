@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Assignment_2.Controllers
-{
+{   [Authorize]
     public class JavascriptBeginnerController : Controller
     {
         // GET: JavascriptBeginner
