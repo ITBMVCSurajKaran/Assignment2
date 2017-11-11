@@ -14,8 +14,30 @@ namespace Assignment_2.Areas.Instructor.Controllers
         // GET: Instructor/StudentReport
         public ActionResult Index()
         {
-            
+
             return View(db.GroupMasters.ToList());
+        }
+        public ActionResult StudentDetail(string id)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(id))
+                {
+                    AdministrationHelpers helpers = new AdministrationHelpers();
+                    var _id = Guid.Parse(id);
+                    var _return = helpers.Get_Student_Report(_id);
+                    return View(_return);
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                return View("Index");
+            }
+
+            return View();
         }
     }
 }

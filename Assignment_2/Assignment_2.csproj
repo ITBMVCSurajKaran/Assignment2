@@ -300,6 +300,7 @@
     <Content Include="Areas\Administrator\Views\GroupMasters\Index.cshtml" />
     <Content Include="Areas\Instructor\Views\StudentReport\Index.cshtml" />
     <Content Include="Areas\Instructor\Views\StudentReport\_StudentDetails.cshtml" />
+    <Content Include="Areas\Instructor\Views\StudentReport\StudentDetail.cshtml" />
     <None Include="js\jquery-1.10.2.intellisense.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />

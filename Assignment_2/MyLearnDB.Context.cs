@@ -38,5 +38,6 @@ namespace Assignment_2
         public virtual DbSet<QuizDetail> QuizDetails { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
         public virtual DbSet<UserPreferenceMaster> UserPreferenceMasters { get; set; }
+        public virtual DbSet<Announcement> Announcements { get; set; }
     }
 }

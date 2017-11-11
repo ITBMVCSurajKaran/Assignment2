@@ -11,7 +11,7 @@
     gd = db.GroupDetails.Where(x => x.GroupId == Model.Id).ToList();
 
 }
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Student Name</th>
@@ -20,6 +20,7 @@
             <th>Quiz Attampt</th>
             <th>Activity</th>
             <th>Last Accessed</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -48,7 +49,7 @@
 
                 }
                 <td>@studentDetail.StudentName</td>
-              
+
                 @if (Model.CourseID.ToString() == "3e851245-056e-40ba-8767-5c662f0d0c86")
                 {
                     <td>JavascriptBeginner</td>
@@ -63,6 +64,8 @@
 
                 <td>@progressStatus.StatusTotal</td>
                 <td>@progressStatus.LastAccessed.Value.ToShortDateString()</td>
+
+                <td>@Html.ActionLink("View", "StudentDetail", new { id = ids })</td>
             </tr>
                     }
     </tbody>

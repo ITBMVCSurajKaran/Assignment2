@@ -1,0 +1,72 @@
+﻿@model Assignment_2.Models.StudentViewModel
+@{
+    ViewBag.Title = "StudentDetail";
+    Layout = "~/Views/Shared/_LayoutOperation.cshtml";
+}
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @Model.StudentName
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    Home
+                </li>
+                <li class="active">Student Repport</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="accordion" class="panel-group">
+                <div class="panel panel-default">
+                    <d  iv class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="#g1" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
+                                Courses
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse" id="g1" style="height: 0px;">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name </th>
+                                        <th>Last Accessed</th>
+                                        <th>Progress</th>
+                                        <th>Activity Used</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.StudentCourseDetail != null)
+                                    {
+                                        foreach (var x in Model.StudentCourseDetail)
+                                        {
+                                            <tr>
+                                                @if (x.CourseId.Value.ToString() == "3E851245-056E-40BA-8767-5C662F0D0C86")
+                                                {
+                                                    <td>JavascriptBeginner </td>
+                                                }
+                                                else
+                                                {
+                                                    <td>JavascriptAdvanced</td>
+                                                }
+                                                <td>@x.LastAccessed.Value.ToShortDateString() @x.LastAccessed.Value.ToShortTimeString()</td>
+                                                <td>@x.ProgressStatus%</td>
+                                                <td>@x.StatusTotal</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
