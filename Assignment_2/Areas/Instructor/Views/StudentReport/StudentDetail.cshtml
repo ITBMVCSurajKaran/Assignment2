@@ -22,7 +22,7 @@
         <div class="col-lg-12">
             <div id="accordion" class="panel-group">
                 <div class="panel panel-default">
-                    <d  iv class="panel-heading">
+                    <div class="panel-heading">
                         <h4 class="panel-title">
                             <a href="#g1" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
                                 Courses
@@ -64,6 +64,50 @@
                             </table>
                         </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="#g2" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
+                                    Quiz
+                                </a>
+                            </h4>
+                    </div>
+                    <div class="panel-collapse collapse" id="g2" style="height: 0px;">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Course </th>
+                                        <th>Score</th>
+                                        <th>Attampt Date</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.StudentQuizDetails != null)
+                                    {
+                                        foreach (var x in Model.StudentQuizDetails)
+                                        {
+                                            <tr>
+                                                @if (x.QuizId.Value.ToString() == "1112feeb-2b62-4031-b208-3d1f54178bda")
+                                                {
+                                                    <td>JavascriptBeginner </td>
+                                                }
+                                                else
+                                                {
+                                                    <td>JavascriptAdvanced</td>
+                                                }
+                                                <td>@x.Result%</td>
+                                                <td>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</td>
+
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

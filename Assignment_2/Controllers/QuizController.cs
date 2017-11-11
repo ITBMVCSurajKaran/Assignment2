@@ -9,6 +9,8 @@ namespace Assignment_2.Controllers
 {
     public class QuizController : Controller
     {
+        private string QuizID = "1112feeb-2b62-4031-b208-3d1f54178bda";
+
         // GET: Quiz
         [Authorize(Roles = "Student,Teacher,Admin")]
         [HttpGet]

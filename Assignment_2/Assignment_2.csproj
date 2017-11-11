@@ -185,6 +185,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Announcement.cs">
+      <DependentUpon>MyLearnDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
