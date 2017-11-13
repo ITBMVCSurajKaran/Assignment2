@@ -64,7 +64,7 @@ body {
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
-select,
+select
 {
     max-width: 280px;
 }
@@ -136,9 +136,7 @@ body {
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-{
+input, select {
     max-width: 280px;
 }
 

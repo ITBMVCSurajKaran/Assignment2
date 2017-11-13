@@ -48,6 +48,35 @@ namespace Assignment_2.Helpers
         }
 
         /// <summary>
+        /// Update user into database
+        /// </summary>
+        /// <param name="result">Update user data</param>
+        /// <returns>true/false</returns>
+        //public bool UpdateUser(string UserName,string Email, int PhoneNumber )
+        //{
+        //    try
+        //    {
+        //        AspNetUser info = new AspNetUser();
+        //        info.UserName = UserName;
+        //        info.Email = Email;
+        //        info.PhoneNumber = int.Parse(PhoneNumber.ToString());
+        //        using (var db = new MyLearnDBEntities())
+        //        {
+        //            db.A.Add(UpdateUser);
+        //            db.SaveChanges();
+        //        }
+
+        //        return true;
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        return false;
+        //    }
+        //}
+
+        /// <summary>
         /// call when student add course
         /// </summary>
         /// <param name="userId"></param>
@@ -236,6 +265,32 @@ namespace Assignment_2.Helpers
             dbcon.Close();
             return model;
         }
+
+        public UserPreferenceMaster UserPrefrence(string user_id)
+        {
+            var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
+            var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["_MyLearnDBEntities"].ToString());
+            var dbcommand = new SqlCommand();
+            dbcommand.Connection = dbcon;
+            dbcommand.CommandText = "select * from UserPreferenceMaster where UserID = @user_id";
+            dbcommand.Parameters.AddWithValue("@user_id", SqlDbType.UniqueIdentifier).Value = user_id;
+            dbcon.Open();
+            var reader = dbcommand.ExecuteReader();
+            var model = new UserPreferenceMaster();
+            while (reader.Read())
+            {
+                var UserPrefrence = new UserPreferenceMaster();
+                model.ThemeColor = reader["ThemeColor"].ToString();
+                model.Font = reader["Font"].ToString();
+            }
+            dbcon.Close();
+            return model;
+
+
+
+        }
+
+
         public List<AnnouncementViewModel> Get_announcemnets()
         {
             var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["_MyLearnDBEntities"].ToString());
@@ -258,18 +313,64 @@ namespace Assignment_2.Helpers
             return model;
         }
 
-
-
-
-
-
-
-
-        //public class DetailAnnouncment
+        //public List<QuizDetail> GetQuizDetailsById(string user_id)
         //{
-        //    public StudentDetailModel StudentDetailModel { get; set; }
-        //    public Announcement Announcement { get; set; }
+        //    var dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["_MyLearnDBEntities"].ToString());
+        //    var dbcommand = new SqlCommand();
+        //    dbcommand.Connection = dbcon;
+        //    dbcommand.CommandText = "select * from QuizDetail where UserId = @user_id";
+        //    dbcon.Open();
+        //    var model = new List<QuizDetail>();
+        //    var reader = dbcommand.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        var details = new QuizDetail();
+        //        details.Result = int.Parse(reader["Result"].ToString());
+        //        details.TotalMarks = int.Parse(reader["TotalMarks"].ToString());
 
+        //    }
+        //    dbcon.Close();
+        //    return model;
         //}
+
+        public void UpdateUser(string user, string email, int number, string user_id)
+        {
+            using (var db = new MyLearnDBEntities())
+            {
+                var Ids = Guid.Parse(user_id);
+                AspNetUser aspNetUser = new AspNetUser();
+                aspNetUser = db.AspNetUsers.SingleOrDefault(x => x.Id == user_id);
+
+                aspNetUser.UserName = user;
+                aspNetUser.Email = email;
+                aspNetUser.PhoneNumber = number.ToString();
+                db.SaveChanges();
+            }
+
+
+            return;
+        }
+
+        public bool SaveUserPreff(string Color)
+        {
+            try
+            {
+                using(var db = new  MyLearnDBEntities())
+                {
+                    var Id = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
+                    var user = db.UserPreferenceMasters.SingleOrDefault(x => x.UserID == Id);
+                    user.ThemeColor = Color;
+                    db.SaveChanges();
+
+                    return true;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

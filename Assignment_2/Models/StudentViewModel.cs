@@ -21,5 +21,7 @@ namespace Assignment_2.Models
             
         public StudentDetailModel StudentDetailModel { get; set; }
         public List<Announcement> Announcement { get; set; }
+        public UserPreferenceMaster UserPrefrence { get; set; }
+        
     }
 }

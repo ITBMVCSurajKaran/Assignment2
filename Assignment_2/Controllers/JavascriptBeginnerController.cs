@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Assignment_2.Models;
+using Assignment_2.Helpers;
 
 namespace Assignment_2.Controllers
 {   [Authorize]
@@ -11,7 +14,14 @@ namespace Assignment_2.Controllers
         // GET: JavascriptBeginner
         public ActionResult Index()
         {
-            return View();
+            var x = User.Identity.GetUserId();
+
+            StudentViewModel _return = new StudentViewModel();
+            StudentHelpers helpers = new StudentHelpers();
+            _return = helpers.Get_All_data_Student();
+            _return.StudentDetailModel = helpers.get_Student_ById(x.ToString());
+
+            return View(_return);
         }
         public ActionResult Chapter1()
         {
