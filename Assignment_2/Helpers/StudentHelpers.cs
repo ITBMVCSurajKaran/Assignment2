@@ -32,7 +32,7 @@ namespace Assignment_2.Helpers
                 quizDetail.DateCreated = DateTime.Now;
                 quizDetail.IsActive = true;
 
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     db.QuizDetails.Add(quizDetail);
                     db.SaveChanges();
@@ -100,7 +100,7 @@ namespace Assignment_2.Helpers
                 detail.IsEnable = true;
                 detail.IsActive = true;
 
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     db.CourseDetails.Add(detail);
                     db.SaveChanges();
@@ -126,7 +126,7 @@ namespace Assignment_2.Helpers
             {
                 var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
 
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     var _result = db.CourseDetails.SingleOrDefault(b => b.Id == courseDetailId);
                     if (_result != null)
@@ -165,7 +165,7 @@ namespace Assignment_2.Helpers
             {
                 var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
 
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     var _result = db.CourseDetails.SingleOrDefault(b => b.CourseId == courseDetailId && b.UserId == UserId);
                     if (_result != null)
@@ -201,7 +201,7 @@ namespace Assignment_2.Helpers
             try
             {
                 var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     _return = db.CourseDetails.SingleOrDefault(b => b.CourseId == CourseID && b.UserId == UserId);
                 }
@@ -224,7 +224,7 @@ namespace Assignment_2.Helpers
             StudentViewModel student = new StudentViewModel();
             try
             {
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
                     student.StudentId = UserId;
@@ -338,7 +338,7 @@ namespace Assignment_2.Helpers
 
         public void UpdateUser(string user, string email, int number, string user_id)
         {
-            using (var db = new MyLearnDBEntities())
+            using (var db = new MyLearnDBEntitiess())
             {
                 var Ids = Guid.Parse(user_id);
                 AspNetUser aspNetUser = new AspNetUser();
@@ -358,7 +358,7 @@ namespace Assignment_2.Helpers
         {
             try
             {
-                using(var db = new  MyLearnDBEntities())
+                using(var db = new MyLearnDBEntitiess())
                 {
                     var Id = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
                     var user = db.UserPreferenceMasters.SingleOrDefault(x => x.UserID == Id);

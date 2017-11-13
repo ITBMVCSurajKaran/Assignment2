@@ -156,8 +156,8 @@ namespace Assignment_2.Areas.Administrator.Controllers
                         // Put user in role
                         UserManager.AddToRole(objNewAdminUser.Id, strNewRole);
                     }
-
-                    return View("Index");
+                    return RedirectToAction("Index", "UserManagement");
+                    // return View("Index");
                 }
                 else
                 {
@@ -172,6 +172,7 @@ namespace Assignment_2.Areas.Administrator.Controllers
                 ViewBag.Roles = GetAllRolesAsSelectList();
                 ModelState.AddModelError(string.Empty, "Error: " + ex);
                 return View("Create");
+               
             }
         }
         #endregion
@@ -214,8 +215,8 @@ namespace Assignment_2.Areas.Administrator.Controllers
                 {
                     return HttpNotFound();
                 }
-
-                return View("Index");
+                return RedirectToAction("Index", "UserManagement");
+                //return View("Index");
             }
             catch (Exception ex)
             {
@@ -256,7 +257,7 @@ namespace Assignment_2.Areas.Administrator.Controllers
                     DeleteUser(objExpandedUserDTO);
                 }
 
-                return View("Index");
+                return RedirectToAction("Index", "UserManagement");
             }
             catch (Exception ex)
             {
@@ -453,8 +454,9 @@ namespace Assignment_2.Areas.Administrator.Controllers
                 {
                     roleManager.Create(new IdentityRole(RoleName));
                 }
-                return View("ViewAllRoles");
-               
+                return RedirectToAction("ViewAllRoles", "UserManagement");
+                //return View("ViewAllRoles");
+
             }
             catch (Exception ex)
             {

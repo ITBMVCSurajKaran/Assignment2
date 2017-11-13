@@ -5,7 +5,7 @@
 @model Assignment_2.GroupMaster
 
 @{
-    MyLearnDBEntities db = new MyLearnDBEntities();
+    MyLearnDBEntitiess db = new MyLearnDBEntitiess();
 
     List<GroupDetail> gd = new List<GroupDetail>();
     gd = db.GroupDetails.Where(x => x.GroupId == Model.Id).ToList();

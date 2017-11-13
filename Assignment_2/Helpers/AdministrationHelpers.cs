@@ -40,7 +40,7 @@ namespace Assignment_2.Helpers
             StudentViewModel student = new StudentViewModel();
             try
             {
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
 
                     student.StudentId = _studentId;
@@ -65,7 +65,7 @@ namespace Assignment_2.Helpers
             List<GroupMaster> list = new List<GroupMaster>();
             try
             {
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     list = db.GroupMasters.ToList();
                 }
@@ -106,7 +106,7 @@ namespace Assignment_2.Helpers
                 Model.IsActive = true;
                 Model.Id = Guid.NewGuid();
                 
-                using(var db = new MyLearnDBEntities())
+                using(var db = new MyLearnDBEntitiess())
                 {
                     db.Announcements.Add(Model);
                     db.SaveChanges();

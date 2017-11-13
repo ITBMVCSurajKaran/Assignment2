@@ -203,6 +203,7 @@
     <Compile Include="Areas\Administrator\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Administrator\Controllers\GroupMastersController.cs" />
     <Compile Include="Areas\Administrator\Controllers\UserManagementController.cs" />
+    <Compile Include="Areas\Administrator\Models\AdminHomeModel.cs" />
     <Compile Include="Areas\Instructor\Controllers\StudentReportController.cs" />
     <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
     <Compile Include="AspNetRole.cs">
@@ -395,6 +396,7 @@
     <Content Include="Views\JavascriptBeginner\Chapter8.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter9.cshtml" />
     <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Shared\_LoginPartialAdmin.cshtml" />
     <EntityDeploy Include="MyLearnDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MyLearnDB.Designer.cs</LastGenOutput>
@@ -402,11 +404,9 @@
     <Content Include="MyLearnDB.edmx.diagram">
       <DependentUpon>MyLearnDB.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_LoginPartialAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administrator\Models\" />
     <Folder Include="Areas\Administrator\Views\Group\" />
     <Folder Include="Areas\Administrator\Views\Shared\" />
     <Folder Include="Areas\Instructor\Models\" />

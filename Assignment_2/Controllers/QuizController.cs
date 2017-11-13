@@ -84,7 +84,7 @@ namespace Assignment_2.Controllers
             var help = new StudentHelpers();
             help.SaveQuizResult(n,10);
 
-            ViewBag.result = n*10;
+            ViewBag.result = n;
             ViewBag.color = "StyleSheet1.css";
             return View();
         }

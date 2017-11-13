@@ -11,7 +11,7 @@ namespace Assignment_2.Areas.Instructor.Controllers
     [Authorize(Roles ="Admin,Teacher")]
     public class StudentReportController : Controller
     {
-        private MyLearnDBEntities db = new MyLearnDBEntities();
+        private MyLearnDBEntitiess db = new MyLearnDBEntitiess();
 
         // GET: Instructor/StudentReport
         public ActionResult Index()

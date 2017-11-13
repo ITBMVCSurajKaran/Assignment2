@@ -22,7 +22,7 @@ namespace Assignment_2.Helpers
             userlog.Quiz = null;
             userlog.ActivityAccessed = null;
 
-            using (var db = new MyLearnDBEntities())
+            using (var db = new MyLearnDBEntitiess())
             {
                 db.UserLogs.Add(userlog);
                 db.SaveChanges();
@@ -33,7 +33,7 @@ namespace Assignment_2.Helpers
         {
             try
             {
-                using (var db = new MyLearnDBEntities())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     var _result = db.UserLogs.SingleOrDefault(b => b.UserID == _userId);
                     if (_result != null)
@@ -59,7 +59,7 @@ namespace Assignment_2.Helpers
 
         public void AddLog_Quiz(string _userId)
         {
-            using (var db = new MyLearnDBEntities())
+            using (var db = new MyLearnDBEntitiess())
             {
                 var _result = db.UserLogs.SingleOrDefault(b => b.UserID == _userId);
                 if (_result != null)

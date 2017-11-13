@@ -14,7 +14,7 @@ namespace Assignment_2.Areas.Administrator.Controllers
     [Authorize(Roles ="Admin")]
     public class GroupMastersController : Controller
     {
-        private MyLearnDBEntities db = new MyLearnDBEntities();
+        private MyLearnDBEntitiess db = new MyLearnDBEntitiess();
 
         // GET: Administrator/GroupMasters
         public ActionResult Index()

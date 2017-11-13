@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Assignment_2.Models;
+using Assignment_2.Areas.Administrator.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Assignment_2.Helpers;
 
@@ -14,13 +15,13 @@ namespace Assignment_2.Areas.Administrator.Controllers
     {
 
         ApplicationDbContext context;
-        MyLearnDBEntities db;
+        MyLearnDBEntitiess db;
         AdministrationHelpers helpers;
 
         public AdminHomeController()
         {
             context = new ApplicationDbContext();
-            db = new MyLearnDBEntities();
+            db = new MyLearnDBEntitiess();
             helpers = new AdministrationHelpers();
         }
 
@@ -28,7 +29,19 @@ namespace Assignment_2.Areas.Administrator.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
-            return View();
+            AdminHomeModel Model = new AdminHomeModel();
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                Model.TotalUsers  = db.Set<IdentityUserRole>().Count();
+            }
+            using(var dbs = new MyLearnDBEntitiess())
+            {
+                Model.TotalAnnoucements = db.Announcements.Count();
+                Model.TotalGroups = db.GroupMasters.Count();
+                Model.TotalQuiz = db.QuizDetails.Count();
+            }
+
+            return View(Model);
         }
 
         #region User Management

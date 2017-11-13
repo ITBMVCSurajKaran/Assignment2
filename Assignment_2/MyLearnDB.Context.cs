@@ -13,10 +13,10 @@ namespace Assignment_2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyLearnDBEntities : DbContext
+    public partial class MyLearnDBEntitiess : DbContext
     {
-        public MyLearnDBEntities()
-            : base("name=MyLearnDBEntities")
+        public MyLearnDBEntitiess()
+            : base("name=MyLearnDBEntitiess")
         {
         }
     
@@ -26,6 +26,7 @@ namespace Assignment_2
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<Announcement> Announcements { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
@@ -38,6 +39,5 @@ namespace Assignment_2
         public virtual DbSet<QuizDetail> QuizDetails { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
         public virtual DbSet<UserPreferenceMaster> UserPreferenceMasters { get; set; }
-        public virtual DbSet<Announcement> Announcements { get; set; }
     }
 }
