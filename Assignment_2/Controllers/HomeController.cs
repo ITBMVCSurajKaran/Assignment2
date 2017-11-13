@@ -12,7 +12,7 @@ namespace Assignment_2.Controllers
 {
     public class HomeController : Controller
     {
-
+        private string CourseId = "3E851245-056E-40BA-8767-5C662F0D0C86";
         public ActionResult Index()
         {
 
@@ -47,6 +47,11 @@ namespace Assignment_2.Controllers
         [ValidateInput(false)]
         public ActionResult Editor(string editorValue)
         {
+            if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                StudentHelpers sp = new StudentHelpers();
+                var upa = sp.Update_Student_Course_Activity(Guid.Parse(CourseId));
+            }
             ViewBag.editorValue = editorValue;
             return View();
         }
@@ -86,9 +91,9 @@ namespace Assignment_2.Controllers
             return View("MyProfile");
 
         }
-      
+
         [HttpPost]
-        public ActionResult BackGround( string id)
+        public ActionResult BackGround(string id)
         {
             var y = User.Identity.GetUserId();
             var help = new StudentHelpers();

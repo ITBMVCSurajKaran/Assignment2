@@ -6,6 +6,7 @@
     @{
         ViewBag.Title = "JavaScript Startup";
         Layout = "~/Views/Shared/_Layout.cshtml";
+        var sss = Model.StudentCourseDetail[0].ProgressStatus / 10;
     }
 
     <div class="div-video_dashbord">
@@ -20,11 +21,11 @@
 
                     <li class="btn btn-default"> <b>  @Html.ActionLink("Start Learning", "Chapter1", "JavascriptBeginner")</b></li>
 
-                    <span><h3> 0 of 10 items complete </h3></span>
+                    <span><h3> @sss of 10 items complete </h3></span>
                     <div class="progress" width="1200px">
                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
-                             aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                            0% Complete
+                             aria-valuemin="0" aria-valuemax="100" style="width:@Model.StudentCourseDetail[0].ProgressStatus%">
+                            @Model.StudentCourseDetail[0].ProgressStatus% Complete
                         </div>
                     </div>
                 </div>

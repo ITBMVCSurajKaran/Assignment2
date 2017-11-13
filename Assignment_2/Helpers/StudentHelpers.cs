@@ -131,7 +131,10 @@ namespace Assignment_2.Helpers
                     var _result = db.CourseDetails.SingleOrDefault(b => b.Id == courseDetailId);
                     if (_result != null)
                     {
-                        _result.ProgressStatus = status;
+                        if (status > _result.ProgressStatus)
+                        {
+                            _result.ProgressStatus = status;
+                        }
                         _result.LastAccessed = DateTime.Now;
                         _result.DateEdited = DateTime.Now;
 
@@ -164,7 +167,7 @@ namespace Assignment_2.Helpers
 
                 using (var db = new MyLearnDBEntities())
                 {
-                    var _result = db.CourseDetails.SingleOrDefault(b => b.Id == courseDetailId);
+                    var _result = db.CourseDetails.SingleOrDefault(b => b.CourseId == courseDetailId && b.UserId == UserId);
                     if (_result != null)
                     {
                         _result.StatusTotal = _result.StatusTotal + 1;
