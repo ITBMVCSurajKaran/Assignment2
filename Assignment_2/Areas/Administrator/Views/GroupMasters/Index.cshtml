@@ -7,68 +7,65 @@
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-    <h2>Index</h2>
+    <h2>Group List</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.GroupName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateEdited)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsEnable)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+    <hr />
+    <table class="table table-hover table-responsive, table-striped">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GroupName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateEdited)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsEnable)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsActive)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
+                <th>
+                    @Html.DisplayNameFor(model => model.GroupName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
 
+                <th>
+                    @Html.DisplayNameFor(model => model.IsEnable)
+                </th>
+
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GroupName)
+                    </td>
+
+                    @if (item.CourseID.Value.ToString() == "3E851245-056E-40BA-8767-5C662F0D0C86")
+                {
+                        <td>JavascriptBeginner </td>
+                    }
+                    else
+                    {
+                        <td>JavascriptAdvanced</td>
+                    }
+                    <td>
+                        @item.CreatedDate.Value.ToShortDateString()
+                    </td>
+                    @if (item.IsEnable == true)
+                {
+                        <td>ACTIVE </td>
+                    }
+                    else
+                    {
+                        <td>NOT ACTIVE</td>
+                    }
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
+    <p>
+        
+        @Html.ActionLink("Create New Group", "Create", null, new { @class = "btn btn-default" })
+    </p>
 </div>

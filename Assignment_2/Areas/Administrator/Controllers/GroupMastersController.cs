@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Assignment_2;
+using Microsoft.AspNet.Identity;
 
 namespace Assignment_2.Areas.Administrator.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class GroupMastersController : Controller
     {
         private MyLearnDBEntities db = new MyLearnDBEntities();
@@ -48,14 +50,22 @@ namespace Assignment_2.Areas.Administrator.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,GroupName,CreatedBy,CourseID,CreatedDate,DateEdited,IsEnable,IsActive")] GroupMaster groupMaster)
         {
-            if (ModelState.IsValid)
+            if (groupMaster.GroupName!= "")
             {
+                string userId = User.Identity.GetUserId();
                 groupMaster.Id = Guid.NewGuid();
+                groupMaster.CreatedBy = Guid.Parse(userId);
+                groupMaster.CreatedDate = DateTime.Now;
+                groupMaster.CourseID = Guid.Parse("3E851245-056E-40BA-8767-5C662F0D0C86");
+                groupMaster.DateEdited = DateTime.Now;
+                groupMaster.IsActive = true;
+                groupMaster.IsEnable = true;
+
                 db.GroupMasters.Add(groupMaster);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Error = "Ok";
             return View(groupMaster);
         }
 
@@ -83,10 +93,16 @@ namespace Assignment_2.Areas.Administrator.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(groupMaster).State = EntityState.Modified;
+                
+                var _groupMaster = db.GroupMasters.SingleOrDefault(x => x.Id == groupMaster.Id);
+                _groupMaster.DateEdited = DateTime.Now;
+                _groupMaster.GroupName = groupMaster.GroupName;
+                _groupMaster.IsEnable = groupMaster.IsEnable;
+                 db.Entry(_groupMaster).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Error = "Ok";
             return View(groupMaster);
         }
 

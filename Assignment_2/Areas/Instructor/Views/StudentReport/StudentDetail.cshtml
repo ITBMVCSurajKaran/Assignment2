@@ -31,7 +31,7 @@
                     </div>
                     <div class="panel-collapse collapse" id="g1" style="height: 0px;">
                         <div class="panel-body">
-                            <table class="table table-hover">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <th>Course Name </th>
@@ -71,46 +71,59 @@
                                     Quiz
                                 </a>
                             </h4>
-                    </div>
-                    <div class="panel-collapse collapse" id="g2" style="height: 0px;">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Course </th>
-                                        <th>Score</th>
-                                        <th>Attampt Date</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @if (Model.StudentQuizDetails != null)
-                                    {
-                                        foreach (var x in Model.StudentQuizDetails)
-                                        {
-                                            <tr>
-                                                @if (x.QuizId.Value.ToString() == "1112feeb-2b62-4031-b208-3d1f54178bda")
-                                                {
-                                                    <td>JavascriptBeginner </td>
-                                                }
-                                                else
-                                                {
-                                                    <td>JavascriptAdvanced</td>
-                                                }
-                                                <td>@x.Result%</td>
-                                                <td>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</td>
-
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
                         </div>
-                    </div>
+                        <div class="panel-collapse collapse" id="g2" style="height: 0px;">
+                            <div class="panel-body">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th>Course </th>
+                                            <th>Score</th>
+                                            <th>Attampt Date</th>
 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model.StudentQuizDetails != null)
+                                        {
+                                            foreach (var x in Model.StudentQuizDetails)
+                                            {
+                                                <tr>
+                                                    @if (x.QuizId.Value.ToString() == "1112feeb-2b62-4031-b208-3d1f54178bda")
+                                                    {
+                                                        <td>JavascriptBeginner </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>JavascriptAdvanced</td>
+                                                    }
+                                                    @if (x.Result.Value < 50)
+                                                    {
+                                                        <td style="color:black" bgcolor="#ff4d4d">@x.Result%</td>
+                                                    }
+                                                    else if (x.Result.Value > 50 && x.Result.Value < 75)
+                                                    {
+                                                        <td style="color:black" bgcolor="#ffb84d">@x.Result%</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td style="color:black" bgcolor="#00e673">@x.Result%</td>
+                                                    }
+                                                    
+                                                    <td>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
 </div>

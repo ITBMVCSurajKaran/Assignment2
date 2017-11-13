@@ -44,7 +44,8 @@ namespace Assignment_2.Helpers
                 {
 
                     student.StudentId = _studentId;
-                    student.StudentName = HttpContext.Current.User.Identity.Name;
+                    var studentdetail = db.AspNetUsers.SingleOrDefault(x => x.Id == _studentId.ToString());
+                    student.StudentName = studentdetail.UserName;
                     student.StudentCourseDetail = db.CourseDetails.Where(b => b.UserId == _studentId).ToList();
                     student.StudentQuizDetails = db.QuizDetails.Where(b => b.UserId == _studentId).ToList();
                     student.StudentPreferenceMaster = db.UserPreferenceMasters.SingleOrDefault(b => b.UserID == _studentId);
@@ -95,24 +96,29 @@ namespace Assignment_2.Helpers
             return model;
         }
 
-        //public CourseDetail getdata(Guid ids, int status)
-        //{
+        public bool Add_Announcement(Announcement Model)
+        {
 
-        //    CourseDetail cd = new CourseDetail();
-        //    using (var db = new MyLearnDBEntities())
-        //    {
+            try
+            {
+                Model.DateCreated = DateTime.Now;
+                Model.IsEnable = true;
+                Model.IsActive = true;
+                Model.Id = Guid.NewGuid();
+                
+                using(var db = new MyLearnDBEntities())
+                {
+                    db.Announcements.Add(Model);
+                    db.SaveChanges();
+                }
 
-        //        var a = (from x in db.CourseDetails
-        //                 join y in db.CourseMasters on x.UserId equals y.Id
-        //                 where x.Id == ids
-        //                 && x.ProgressStatus == status
-        //                 select new
-        //                 {
-        //                     idm = x.Id,
-        //                     status = x.ProgressStatus
-        //                 }).ToList().Where(x => x.idm == Guid.Empty).Take(10).Sum(10);
-        //    }
-        //    return cd;
-        //}
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li id="about">
-                      @Html.ActionLink("Home", "Index", "Home")
+                        @Html.ActionLink("Home", "Index", "Home")
                     </li>
 
                     <li id="contact">
@@ -81,7 +81,16 @@
                         if (User.IsInRole("Admin"))
                         {
                             <li>
-                                @Html.ActionLink("Administration", "Index", "AdminHome")
+                                <a href="~/Administrator/AdminHome">Administrator</a>
+                            </li>
+                        }
+                    }
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Teacher"))
+                        {
+                            <li>
+                                <a href="~/Instructor/StudentReport">Instructor</a>
                             </li>
                         }
                     }

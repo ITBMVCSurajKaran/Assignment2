@@ -11,12 +11,16 @@ namespace Assignment_2
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Announcement
     {
         public System.Guid Id { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Message { get; set; }
+        [Required]
         public string UserType { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
         public Nullable<bool> IsEnable { get; set; }

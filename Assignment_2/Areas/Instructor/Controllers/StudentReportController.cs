@@ -7,6 +7,8 @@ using Assignment_2.Helpers;
 
 namespace Assignment_2.Areas.Instructor.Controllers
 {
+
+    [Authorize(Roles ="Admin,Teacher")]
     public class StudentReportController : Controller
     {
         private MyLearnDBEntities db = new MyLearnDBEntities();
