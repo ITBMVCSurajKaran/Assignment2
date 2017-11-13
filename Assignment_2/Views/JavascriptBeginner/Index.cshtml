@@ -1,50 +1,256 @@
 ﻿
-@{
-    ViewBag.Title = "JavaScript Startup";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+  @using Microsoft.AspNet.Identity
 
-<div class="div-video_dashbord">
-    <div class="inner-dashbord">
-        <div class="content-display">
-            <div class="img-display">
+@model Assignment_2.Models.StudentViewModel
 
-                <img class="display-img" src="http://physicaltherapist.pro/wp-content/uploads/2016/06/iStock_000072605793_Large.jpg" />
+    @{
+        ViewBag.Title = "JavaScript Startup";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-            </div><div class="controls-dispay">
-                <h2>Lecture 1 : Javascript Essential Training</h2>
-                      
-                      <li class="btn btn-default"> <b>  @Html.ActionLink("Start Learning", "Chapter1", "JavascriptBeginner")</b></li>
-   
-                <span><h3> 0 of 10 items complete </h3></span>
-                <div class="progress" width="1200px">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
-                         aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                        0% Complete
+    <div class="div-video_dashbord">
+        <div class="inner-dashbord">
+            <div class="content-display">
+                <div class="img-display">
+
+                    <img class="display-img" src="http://physicaltherapist.pro/wp-content/uploads/2016/06/iStock_000072605793_Large.jpg" />
+
+                </div><div class="controls-dispay">
+                    <h2>Lecture 1 : Javascript Essential Training</h2>
+
+                    <li class="btn btn-default"> <b>  @Html.ActionLink("Start Learning", "Chapter1", "JavascriptBeginner")</b></li>
+
+                    <span><h3> 0 of 10 items complete </h3></span>
+                    <div class="progress" width="1200px">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                             aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            0% Complete
+                        </div>
                     </div>
                 </div>
-
-               
-
-
-
             </div>
         </div>
     </div>
-
-</div>
-<nav class="nav nav-inverse" style="background:white; border-top:2px solid black; margin-top: 15px; border:1px solid white; ">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#"></a>
+    <div style="min-height:10px; background-color:orange;"> </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Services
+                    <small>What We Do</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="active">My Profile</li>
+                </ol>
+            </div>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#" class="navv"><b>Overview</b></a></li>
-            <li><a href="#" class="navv"><b>Course Content</b></a></li>
-            <li><a href="#" class="navv"><b>Groups</b></a></li>
-            <li><a href="#" class="navv"><b>Announcements</b></a></li>
-        </ul>
-    </div>
-</nav>
-<div style="min-height:1000px; background-color:#f2f3f5;"> </div>
+        <!-- Service Tabs -->
+        <div class="row">
+            <div class="col-lg-12">
 
+                <h2 class="page-header">HELLO! </h2>
+
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active">
+                        <a data-toggle="tab" href="#service-one">Overview</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#service-two">Content</a>
+                    </li>
+
+                    <li>
+                        <a data-toggle="tab" href="#service-five">Results</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div id="service-one" class="tab-pane fade in active">
+                        <i class="fa fa-gear pull-left fa-4x"></i>
+
+                            Service 1
+
+                        
+
+
+
+                    </div>
+                    <div id="service-two" class="tab-pane fade">
+                        <i class="fa fa-gears pull-left fa-4x"></i>
+                        Service 2
+
+                    </div>
+                    @*<div id="service-three" class="tab-pane fade">
+                            <i class="fa fa-magic pull-left fa-4x"></i>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2 class="page-header">More Courses</h2>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                                    <h3>JAVASCRIPT</h3>
+                                    <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                                    <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                                    <h3>HTML</h3>
+                                    <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                                    <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                                    <h3>CSS</h3>
+                                    <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                                    <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>*@
+                @*<div id="service-four" class="tab-pane fade table">
+                        <i class="fa fa-flask pull-left fa-4x"></i>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Quiz</th>
+                                    <th>Maximum Marks</th>
+                                    <th>You Scored</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Karan</td>
+                                    <td>Karank@gmail.com</td>
+                                    <td>Javascript Beginner </td>
+                                    <td>100%</td>
+                                    <td>80%</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+                    </div>*@
+                     
+
+                    @*<table class="table ">
+                        <thead>
+                            <tr>
+                                <th>Course </th>
+                                <th>Score</th>
+                                <th>Attampt Date</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.StudentQuizDetails != null)
+                            {
+                                foreach (var x in Model.StudentQuizDetails)
+                                {
+                                    <tr>
+                                        @if (x.QuizId.Value.ToString() == "1112feeb-2b62-4031-b208-3d1f54178bda")
+                                        {
+                                            <td>JavascriptBeginner </td>
+                                        }
+                                        else
+                                        {
+                                            <td>JavascriptAdvanced</td>
+                                        }
+                                        @if (x.Result.Value < 50)
+                                        {
+                                            <td style="color:black" bgcolor="#ff4d4d">@x.Result%</td>
+                                        }
+                                        else if (x.Result.Value > 50 && x.Result.Value < 75)
+                                        {
+                                            <td style="color:black" bgcolor="#ffb84d">@x.Result%</td>
+                                        }
+                                        else
+                                        {
+                                            <td style="color:black" bgcolor="#00e673">@x.Result%</td>
+                                        }
+
+                                        <td>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</td>
+
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>*@
+
+
+                    <div id="service-five" class="tab-pane fade">
+
+                        @if (Model.StudentQuizDetails != null)
+                        {
+                            string alertClass = " ";
+                            foreach (var x in Model.StudentQuizDetails)
+                            {
+
+
+
+                                <i class="fa fa-flag pull-left fa-4x"></i>
+                                if (x.Result.Value <= 50)
+                                {
+
+                                    alertClass = "btn-danger";
+                                }
+                                else if (x.Result.Value < 70)
+                                {
+
+                                    alertClass = "btn-warning";
+
+                                }
+                                else
+                                {
+
+                                    alertClass = "btn-success";
+
+
+                                }
+                                <div class="alert @alertClass">
+
+                                    @if (x.QuizId.Value.ToString() == "1112feeb-2b62-4031-b208-3d1f54178bda")
+                                    {
+
+                                        <h1>  <strong> JavaScript  </strong></h1>
+                                        <h3>You have scored  @x.Result</h3>
+                                        <br />
+                                        <h3>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</h3>
+
+                                    }
+                                    else
+                                    {
+
+
+                                        <h1>  <strong> Advance Javascrpit</strong></h1>
+                                        <h3>You have scored result @x.Result</h3>
+                                        <br/>
+                                        <h3>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</h3>
+
+
+                                    }
+
+                                </div>
+
+
+
+
+
+
+
+                            }
+                        }        <br />
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

@@ -15,7 +15,7 @@ namespace Assignment_2.Controllers
 
         public ActionResult Index()
         {
-            
+
             StudentHelpers helpers = new StudentHelpers();
             var _return = helpers.Get_announcemnets();
             return View(_return);
@@ -64,12 +64,37 @@ namespace Assignment_2.Controllers
             StudentHelpers helpers = new StudentHelpers();
             _return = helpers.Get_All_data_Student();
             _return.StudentDetailModel = helpers.get_Student_ById(x.ToString());
-
+            _return.StudentPreferenceMaster = helpers.UserPrefrence(x.ToString());
             return View(_return);
-            
+
 
         }
+        public ActionResult InfoUpdate(string user, string email, int number)
+        {
+
+            var x = User.Identity.GetUserId();
+            var help = new StudentHelpers();
+            help.UpdateUser(user, email, number, x.ToString());
 
 
+
+
+            ViewBag.name = user;
+            ViewBag.email = email;
+            ViewBag.number = number;
+
+            return View("MyProfile");
+
+        }
+      
+        [HttpPost]
+        public ActionResult BackGround( string id)
+        {
+            var y = User.Identity.GetUserId();
+            var help = new StudentHelpers();
+            var _return = help.SaveUserPreff(id);
+
+            return View("Index");
+        }
     }
 }

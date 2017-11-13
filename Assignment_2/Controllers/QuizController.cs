@@ -80,10 +80,12 @@ namespace Assignment_2.Controllers
                 n = n + 1;
             }
 
+            n = n * 10;
             var help = new StudentHelpers();
             help.SaveQuizResult(n,10);
 
             ViewBag.result = n*10;
+            ViewBag.color = "StyleSheet1.css";
             return View();
         }
     }

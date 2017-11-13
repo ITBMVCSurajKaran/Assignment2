@@ -285,6 +285,7 @@
     <Content Include="css\dashboard.css" />
     <Content Include="css\modern-business.css" />
     <Content Include="css\Site.css" />
+    <Content Include="css\red.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -387,6 +388,7 @@
     <Content Include="MyLearnDB.edmx.diagram">
       <DependentUpon>MyLearnDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Views\Home\InfoUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
