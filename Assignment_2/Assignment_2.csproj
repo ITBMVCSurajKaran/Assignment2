@@ -287,6 +287,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Assignment_2-20171002115014.mdf" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -406,7 +407,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Views\Group\" />
     <Folder Include="Areas\Administrator\Views\Shared\" />
     <Folder Include="Areas\Instructor\Models\" />
