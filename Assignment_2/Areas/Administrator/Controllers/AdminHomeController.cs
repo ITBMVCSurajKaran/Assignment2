@@ -165,7 +165,7 @@ namespace Assignment_2.Areas.Administrator.Controllers
                 }
             }
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
         #endregion
     }

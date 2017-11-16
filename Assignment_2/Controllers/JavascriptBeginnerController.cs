@@ -14,33 +14,25 @@ namespace Assignment_2.Controllers
     {
         private string CourseId = "3E851245-056E-40BA-8767-5C662F0D0C86";
         // GET: JavascriptBeginner
-        public ActionResult Index()
-        {
-            var x = User.Identity.GetUserId();
+        //public ActionResult Index()
+        //{
+        //    var x = User.Identity.GetUserId();
 
-            StudentViewModel _return = new StudentViewModel();
-            StudentHelpers helpers = new StudentHelpers();
-            _return = helpers.Get_All_data_Student();
-            _return.StudentDetailModel = helpers.get_Student_ById(x.ToString());
+        //    StudentViewModel _return = new StudentViewModel();
+        //    StudentHelpers helpers = new StudentHelpers();
+        //    _return = helpers.Get_All_data_Student();
+        //    _return.StudentDetailModel = helpers.get_Student_ById(x.ToString());
 
-            return View(_return);
-        }
+        //    return View(_return);
+        //}
         public ActionResult Chapter1()
         {
-            StudentHelpers helper = new StudentHelpers();
-
-
-            helper.Update_Student_Course_Status(Guid.Parse(CourseId), 10);
+            
             return View();
         }
         public ActionResult Chapter2()
         {
-            StudentHelpers helper = new StudentHelpers();
-
-            var studentdata = helper.Get_CourseDetail_ByUserID(Guid.Parse(CourseId));
-
-
-            helper.Update_Student_Course_Status(Guid.Parse(CourseId), 20);
+           
             return View();
         }
 

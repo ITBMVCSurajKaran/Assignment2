@@ -1,73 +1,106 @@
-﻿
-
-
-@{
+﻿@{
     ViewBag.Title = "JavaScript Startup";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="div-video_dashbord">
-    <div class="inner-dashbord">
-        <div class="content-display">
-            <div class="img-display">
+<head>
+    <script src="~/js/js-image-slider.js"></script>
+    <link href="~/css/js-image-slider.css" rel="stylesheet" />
 
-                <img class="display-img" src="http://physicaltherapist.pro/wp-content/uploads/2016/06/iStock_000072605793_Large.jpg" />
-
-            </div><div class="controls-dispay">
-                <h2>Lecture 1 : Javascript Essential Training</h2>
-
-                <li class="btn btn-default"> <b>  @Html.ActionLink("Start Learning", "Chapter1", "JavascriptBeginner")</b></li>
-
-                <span><h3> 0 of 10 items complete </h3></span>
-                <div class="progress" width="1200px">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
-                         aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                        0% Complete
-                    </div>
-                </div>
-            </div>
+</head>
+ 
+    <div id="sliderFrame">
+        <div id="slider">
+           
+             <img class="slider-index" src="~/images/book-2909346_1280.jpg" alt="Image result for online courses free images hd"/>" 
+            </a>
+            <img class="slider-index" src="~/images/school-2761394_1280.jpg" />
+            <img class="slider-index" src="~/images/books-2596809_1280.jpg" />           
+        </div>
+        <div id="htmlcaption" style="display: none;"><a href="http://www.google.com/"></a>.
         </div>
     </div>
-</div>
-<div style="min-height:10px; background-color:orange;"> </div>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Services
-                <small>What We Do</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">My Profile</li>
-            </ol>
-        </div>
-    </div>
+
+
+<div class="container container-2">
+    
     <!-- Service Tabs -->
     <div class="row">
         <div class="col-lg-12">
 
-            <h2 class="page-header">HELLO! </h2>
+            <h2 class="page-header"> </h2>
 
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="active">
-                    <a data-toggle="tab" href="#service-one">Overview</a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#service-two">Content</a>
-                </li>
-
-                <li>
-                    <a data-toggle="tab" href="#service-five">More</a>
-                </li>
-            </ul>
+            
             <div class="tab-content" id="myTabContent">
                 <div id="service-one" class="tab-pane fade in active">
                     <i class="fa fa-gear pull-left fa-4x"></i>
 
-                    Service 1
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="page-header">Current Courses</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/Home/Record">
+                            <img src="~/images/learn-javascript.png" style="width:400px; height:250px;" class="img-responsive" ></a>
+                            <h3>Javascript</h3>
+                            <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>CSS</h3>
+                            <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="~/images/jquery-3.png" style="width:400px; height:235px;" class="img-responsive"></a>
+                            <h3>jquery</h3>
+                            <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-lg-12">
+                            <h2 class="page-header"></h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>HTML</h3>
+                            <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>CSS</h3>
+                            <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>jquery</h3>
+                            <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-lg-12">
+                            <h2 class="page-header"></h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>HTML</h3>
+                            <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>CSS</h3>
+                            <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/2479876/14570828119302_illu-cours_html5-css3.png" class="img-responsive">
+                            <h3>jquery</h3>
+                            <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+                            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
 
 
 
@@ -151,6 +184,8 @@
                         <div class="alert alert-danger">
                             <h1>  <strong>Details</strong></h1>
                             <p>more details </p>
+
+
 
                         </div>
                     

@@ -82,16 +82,27 @@ namespace Assignment_2.Helpers
         /// <param name="userId"></param>
         /// <param name="CourseId"></param>
         /// <returns></returns>
-        public bool Add_Student_Course(string userId, string CourseId)
+        public bool Add_Student_Course()
         {
             try
             {
+                var courseId = "3E851245-056E-40BA-8767-5C662F0D0C86";
+                var UserID = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
+                using (var db = new MyLearnDBEntitiess())
+                {
+                    var existUser = db.CourseDetails.SingleOrDefault(x => x.UserId == UserID);
+                    if (existUser.Id != null)
+                    {
+                        return true;
+                    }
+                }
+
                 CourseDetail detail = new CourseDetail();
 
                 detail.Id = Guid.NewGuid();
-                detail.UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
+                detail.UserId = UserID;
                 detail.DateAdded = DateTime.Now;
-                detail.CourseId = Guid.Parse(CourseId);
+                detail.CourseId = Guid.Parse(courseId);
                 detail.ProgressStatus = 0;
                 detail.StatusTotal = 0;
                 detail.LastAccessed = DateTime.Now;
@@ -230,10 +241,11 @@ namespace Assignment_2.Helpers
                     student.StudentId = UserId;
                     student.StudentName = HttpContext.Current.User.Identity.Name;
                     student.StudentCourseDetail = db.CourseDetails.Where(b => b.UserId == UserId).ToList();
-                    student.StudentQuizDetails = db.QuizDetails.Where(b => b.UserId == UserId).ToList();
+                    student.StudentQuizDetails = db.QuizDetails.Where(b => b.UserId == UserId).ToList().OrderByDescending(b => b.DateCreated).ToList();
                     student.StudentPreferenceMaster = db.UserPreferenceMasters.SingleOrDefault(b => b.UserID == UserId);
                     student.StudentGroupdetails = db.GroupDetails.Where(b => b.UserId == UserId).ToList();
-                    student.Announcement = db.Announcements.Where(b => b.UserType == "Student" && b.IsEnable == true).ToList();
+                    student.Announcement = db.Announcements.Where(b => b.UserType == "Student" && b.IsEnable == true).ToList().OrderByDescending(x => x.DateCreated).ToList();
+                    student.Get_Student_All_Groups = Get_Student_All_Groups();
                 }
             }
             catch (Exception)
@@ -358,7 +370,7 @@ namespace Assignment_2.Helpers
         {
             try
             {
-                using(var db = new MyLearnDBEntitiess())
+                using (var db = new MyLearnDBEntitiess())
                 {
                     var Id = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
                     var user = db.UserPreferenceMasters.SingleOrDefault(x => x.UserID == Id);
@@ -375,5 +387,98 @@ namespace Assignment_2.Helpers
                 return false;
             }
         }
+
+        /// <summary>
+        /// Get all Groups 
+        /// </summary>
+        /// <returns></returns>
+        public List<GroupMaster> Get_All_Groups()
+        {
+            List<GroupMaster> list = new List<GroupMaster>();
+            try
+            {
+                using (var db = new MyLearnDBEntitiess())
+                {
+                    list = db.GroupMasters.ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Join group for students
+        /// </summary>
+        /// <param name="GroupID"></param>
+        public void JoinStudentGroup(Guid GroupID)
+        {
+            using (var db = new MyLearnDBEntitiess())
+            {
+                var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
+                var x = db.GroupDetails.SingleOrDefault(v => v.UserId == UserId && v.GroupId == GroupID);
+                if (x == null)
+                {
+                    GroupDetail group = new GroupDetail();
+                    group.Id = Guid.NewGuid();
+                    group.UserId = UserId;
+                    group.GroupId = GroupID;
+                    group.DateCreated = DateTime.Now;
+                    group.DateEdited = DateTime.Now;
+                    group.IsEnable = true;
+                    group.IsActive = true;
+
+                    db.GroupDetails.Add(group);
+                    db.SaveChanges();
+                }
+                
+            }
+
+        }
+
+
+        /// <summary>
+        /// Get those groups where stduent joined already 
+        /// </summary>
+        /// <returns></returns>
+        public List<GroupViewModel> Get_Student_All_Groups()
+        {
+            List<GroupViewModel> _return = new List<GroupViewModel>();
+            try
+            {
+                var UserId = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
+
+                using (var db = new MyLearnDBEntitiess())
+                {
+                    var a = (from x in db.GroupDetails
+                             join y in db.GroupMasters on x.GroupId equals y.Id
+                             where x.UserId == UserId
+                             select new
+                             {
+                                 Id = x.Id,
+                                 GroupName = y.GroupName
+                             }).ToList();
+
+                    foreach (var item in a)
+                    {
+                        GroupViewModel group = new GroupViewModel();
+                        group.Id = item.Id;
+                        group.GroupName = item.GroupName;
+                        _return.Add(group);
+                    }
+
+                }
+                return _return;
+            }
+            catch (Exception)
+            {
+                return _return;
+            }
+
+        }
+
     }
 }

@@ -36,19 +36,13 @@
 
 
 
-            <textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled> 
-
-
-  
-              
+            <textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled>              
                 <script>
                     document.getElementById("demo").innerHTML = "My First JavaScript";
                </script>
-
-
-
 </textarea> <br />
-            <li class="btn btn-default"> <b>  @Html.ActionLink("<< Prev", "Chapter1", "JavascriptBeginner")</b></li></b></li><li class="btn btn-default"> <b>  @Html.ActionLink("Next >>", "Chapter3", "JavascriptBeginner")</b></li></a>
+            <br/>
+            <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("<< Prev", "Chapter1", "JavascriptBeginner",new { @class = "buttons"})</b></li> <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("Next >>", "Chapter3", "JavascriptBeginner",new { @class = "buttons" })</b></li>
 
         </div>
         <div class="col-md-4">
@@ -74,7 +68,7 @@
 </html> 
                   </textarea>
                
-                <button type="submit" class="btn btn-primary">Try Now!</button>
+                <button type="submit" class="btn btn-warning">Try Now!</button>
             }
         </div>
     </div>

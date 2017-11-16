@@ -33,22 +33,19 @@
     <div class="row">
         <div class="col-md-8">
             <h2 class="page-header">Some Javescript Basics : Chapter-1</h2>
-            <textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled> 
-
-
-                
+            <textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled>                
 <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Click Me!</button>
 
-
-
 </textarea> <br/>
-            </li><li class="btn btn-default"> <b>  @Html.ActionLink("Next >>", "Chapter2", "JavascriptBeginner")</b></li></a>
+            
+            <br/>
+            <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("Next >>", "Chapter2", "JavascriptBeginner",new { @class = "buttons" })</b></li>
 
         </div>
         <div class="col-md-4">
             <h2 class="page-header">Want to try yourself!</h2>
             <p>You can test your javascript code in a editor to see the output from the code.</p>
-            @using (Html.BeginForm("Editor", "Home", FormMethod.Post,new { target = "_blank" }))
+            @using (Html.BeginForm("Editor", "Home", FormMethod.Post,new {  target = "_blank" }))
             {
                 @*<input type="text" hidden name="chapter1" cols=”80″ rows=”85″ class=" text-val" value="<script>
 document.getElementById('demo').innerHTML = 'Hello'; </script>" >*@
@@ -67,7 +64,7 @@ document.getElementById('demo').innerHTML = 'Hello'; </script>" >*@
 </html>
                   </textarea>
 
-                            <button type="submit"  class="btn btn-primary">Try Now!</button>
+                            <button type="submit"  class="btn btn-warning">Try Now!</button>
             }
         </div>
     </div>

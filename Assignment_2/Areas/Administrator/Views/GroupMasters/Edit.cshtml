@@ -48,7 +48,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsEnable, "Enable", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <div class="checkbox">
+                    <div class="checkbox" style="color:black;">
                         @Html.EditorFor(model => model.IsEnable,new { @class= "dropdown" })
                         @Html.ValidationMessageFor(model => model.IsEnable, "", new { @class = "text-danger" })
                     </div>
@@ -59,7 +59,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="submit" value="Save" class="btn btn-warning" />
                 </div>
             </div>
         </div>

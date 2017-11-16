@@ -1,0 +1,248 @@
+﻿
+  @using Microsoft.AspNet.Identity
+@model Assignment_2.Models.StudentViewModel
+
+   
+
+    @{
+        ViewBag.Title = "JavaScript Startup";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+       
+    }
+
+
+    <div class="div-video_dashbord">
+        <div class="inner-dashbord">
+            <div class="content-display">
+                <div class="img-display">
+
+                    <img class="display-img" src="http://physicaltherapist.pro/wp-content/uploads/2016/06/iStock_000072605793_Large.jpg" />
+
+                </div><div class="controls-dispay">
+                    <h2>Javascript Essential Training</h2>
+                @*<ul>
+    <li class="btn btn-warning"> <b>  @Html.ActionLink("Start Learning", "Chapter1", "JavascriptBeginner",new { @class="buttons"})</b></li>
+    </ul>*@
+                    
+                <div class="btn btn-warning big-button">@Html.ActionLink("Start Learning","Chapter1","JavascriptBeginner")</div>
+                
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div style="min-height:10px;" class="navbar-inverse"> </div>
+<br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                
+            </div>
+        </div>
+        <!-- Service Tabs -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                
+                    <ul class="nav nav-tabs" id="myTab">
+                    <li class="active">
+                        <a data-toggle="tab" href="#service-one">My Groups</a>
+                    </li>
+                                           
+                    <li>
+                        <a data-toggle="tab" href="#service-three">All Groups</a>
+                    </li>
+                        <li>
+                            <a data-toggle="tab" href="#service-four">Courses</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#service-six">Announcements</a>
+                        </li>
+
+                    <li>
+                        <a data-toggle="tab" href="#service-five">Results</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div id="service-one" class="tab-pane fade in active">
+                        <i class="fa fa-gear pull-left fa-4x"></i>
+                        <table class="table table-hover" style="font-size:20px;">
+                            <thead>
+                                <tr>
+                                    <th>Group Name</th>
+                                   <th>Is Active</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var a in Model.Get_Student_All_Groups)
+                                {
+                                    <tr>
+                                        <td>@a.GroupName</td>
+                                        <td>True</td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>                    
+                        </div>
+
+
+                    <div id="service-three" class="tab-pane fade">
+                        <i class="fa fa-gears pull-left fa-4x"></i>
+                      
+                        <table class="table table-hover" style="font-size:20px;">
+                            <thead>
+                                <tr>
+                                    <th>Group Name</th>
+                                    <th>Date Created</th>
+                                    <th> Join </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var g in Model.Get_All_Groups)
+                                {
+                                    using (Html.BeginForm("Record", "Home"))
+                                    {
+                                    <tr>
+                                        <td>@g.GroupName</td>
+                                        <td>@g.CreatedDate</td>
+                                        
+                                        
+                                            @Html.Hidden("groupID", g.Id)
+                                            
+                                       
+
+                                        <td><button class="btn btn-warning" type="submit">Join</button>
+
+                                    </tr>
+                                    }
+                                }
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+                    @* Javascript course in only available in the database *@
+                    <div id="service-four" class="tab-pane fade">
+                        <i class="fa fa-gears pull-left fa-4x"></i>
+                        @foreach(var c in Model.StudentCourseDetail)
+                        {
+                            var a = c.Id.ToString();
+                            if (a == "3964d629-e36e-43c6-838c-d3ebf97b7ea5") {
+                                <div class="alert alert-danger">
+                                <h1>Javascript</h1>
+                                <p>Javascript is a very useful programming language</p>
+                                    </div>
+                            }
+                           
+                        }
+
+
+                    </div>
+
+                    <div id="service-six" class="tab-pane fade">
+                        <i class="fa fa-flag pull-left fa-4x"></i>
+                        @foreach (var x in Model.Announcement)
+                        {
+
+                            string alertClass = " ";
+                            DateTime localDate = DateTime.Now;
+                            var date = localDate.ToShortDateString();
+                            
+
+                            if (x.DateCreated.Value.ToShortDateString() == date)
+                            {
+                                alertClass = "btn-success";
+                            }
+                            else
+                            {
+                                alertClass = "btn-danger";
+                            }
+
+
+                                    <div class="alert @alertClass">
+
+                                        <h2></h2>
+                                        <h1>  <strong>@x.Title: </strong></h1>
+                                        @x.Message
+                                        <br />
+                                        @x.DateCreated.Value.ToShortDateString() | @x.DateCreated.Value.ToShortTimeString()
+                                    </div>
+                            <br />
+                        }
+                    </div>
+                    <div id="service-five" class="tab-pane fade">
+
+                        @if (Model.StudentQuizDetails != null)
+                        {
+                            string alertClass = " ";
+                            foreach (var x in Model.StudentQuizDetails)
+                            {
+
+
+
+                                <i class="fa fa-flag pull-left fa-4x"></i>
+                                if (x.Result.Value <= 50)
+                                {
+
+                                    alertClass = "btn-danger";
+                                }
+                                else if (x.Result.Value < 70)
+                                {
+
+                                    alertClass = "btn-warning";
+
+                                }
+                                else
+                                {
+
+                                    alertClass = "btn-success";
+
+
+                                }
+                                <div class="alert @alertClass">
+
+                                    @if (x.QuizId.Value.ToString() == "1112feeb-2b62-4031-b208-3d1f54178bda")
+                                    {
+
+                                        <h1>  <strong> JavaScript  </strong></h1>
+                                        <h3>You have scored  @x.Result</h3>
+                                        <br />
+                                        <h3>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</h3>
+
+                                    }
+                                    else
+                                    {
+
+
+                                        <h1>  <strong> Advance Javascrpit</strong></h1>
+                                        <h3>You have scored result @x.Result</h3>
+                                        <br/>
+                                        <h3>@x.DateCreated.Value.ToShortDateString() @x.DateCreated.Value.ToShortTimeString()</h3>
+
+
+                                    }
+
+                                </div>
+
+
+
+
+
+
+
+                            }
+                        }        <br />
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

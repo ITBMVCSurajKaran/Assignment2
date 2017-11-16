@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Chapter 1";
+    ViewBag.Title = "Chapter 3";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -42,7 +42,8 @@
         document.getElementById("demo").innerHTML = z;
 </script>
 </textarea> <br />
-            <li class="btn btn-default"> <b>  @Html.ActionLink("<< Prev", "Chapter3", "JavascriptBeginner")</b></li></b></li><li class="btn btn-default"> <b>  @Html.ActionLink("Next >>", "Chapter4", "JavascriptBeginner")</b></li></a>
+            <br />
+            <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("<< Prev", "Chapter2", "JavascriptBeginner", new { @class = "buttons" })</b></li> <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("Next >>", "Chapter4", "JavascriptBeginner", new { @class = "buttons" })</b></li>
 
         </div>
         <div class="col-md-4">
@@ -76,7 +77,7 @@
 
                   </textarea>
 
-                <button type="submit" class="btn btn-primary">Try Now!</button>
+                <button type="submit" class="btn btn-warning">Try Now!</button>
             }
         </div>
     </div>

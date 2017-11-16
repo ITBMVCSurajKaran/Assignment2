@@ -50,10 +50,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList">
-      <HintPath>..\..\..\..\Downloads\EndToEnd_MVC5_Administration\EndToEnd\bin\PagedList.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="PagedList.Mvc">
-      <HintPath>..\..\..\..\Downloads\EndToEnd_MVC5_Administration\EndToEnd\bin\PagedList.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -288,11 +288,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-Assignment_2-20171002115014.mdf" />
+    <Content Include="App_Data\aspnet-Assignment_2-20171002115014_log.ldf">
+      <DependentUpon>aspnet-Assignment_2-20171002115014.mdf</DependentUpon>
+    </Content>
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\dashboard.css" />
+    <Content Include="css\js-image-slider.css" />
     <Content Include="css\modern-business.css" />
     <Content Include="css\Site.css" />
     <Content Include="favicon.ico" />
@@ -323,6 +327,13 @@
     <Content Include="Areas\Administrator\Views\UserManagement\Index.cshtml" />
     <Content Include="Areas\Administrator\Views\UserManagement\ViewAllRoles.cshtml" />
     <None Include="js\jquery-1.10.2.intellisense.js" />
+    <Content Include="images\book-2909346_1280.jpg" />
+    <Content Include="images\books-2596809_1280.jpg" />
+    <Content Include="images\dictionary-1619740.jpg" />
+    <Content Include="images\jquery-3.png" />
+    <Content Include="images\laptop-2557574_640.jpg" />
+    <Content Include="images\learn-javascript.png" />
+    <Content Include="images\school-2761394_1280.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.10.2.js" />
@@ -332,6 +343,7 @@
     <Content Include="js\jquery.validate.min.js" />
     <Content Include="js\jquery.validate.unobtrusive.js" />
     <Content Include="js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\js-image-slider.js" />
     <Content Include="js\modernizr-2.6.2.js" />
     <Content Include="js\respond.js" />
     <Content Include="js\respond.min.js" />
@@ -385,7 +397,7 @@
     <Content Include="Views\Home\Content.cshtml" />
     <Content Include="Views\Quiz\QuizOne.cshtml" />
     <Content Include="Views\Quiz\ProcessResult.cshtml" />
-    <Content Include="Views\JavascriptBeginner\Index.cshtml" />
+    <Content Include="Views\Home\Record.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter1.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter10.cshtml" />
     <Content Include="Views\JavascriptBeginner\Chapter2.cshtml" />

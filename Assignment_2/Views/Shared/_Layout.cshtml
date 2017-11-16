@@ -12,6 +12,7 @@
     <link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet">
     <link href="@Url.Content("/css/modern-business.css")" rel="stylesheet" />
     <link href="@Url.Content("/css/Site.css")" rel="stylesheet" />
+    
 
     @if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
     {
@@ -24,18 +25,13 @@
                 background-color: @up.ThemeColor;
                 border-color: transparent;
             }
+            footer{
+            backgroun-color: @up.ThemeColor;
+            }
         </style>
     }
 
 
-</head>
-@*@section scripts{ <script type="text/javascript">
-       function myFunction() {
-           document.querySelector(".karan").innerHTML = "hello";
-       }
-
-    </script>
-       }*@
 </head>
 
 <body>
@@ -57,53 +53,28 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="about">
+                    <li id="home">
                         @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li id="about">
+                        @Html.ActionLink("About", "About", "Home")
                     </li>
 
                     <li id="contact">
                         @Html.ActionLink("Contact", "Contact", "Home")
                     </li>
-                    <li id="portfolio" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li id="1columnportfolio">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
+                    
 
-                            <li id="3columnportfolio">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
-
-                            <li id="singleportfolioitem">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="blog" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Video Lib <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-
-                            <li id="bloghome2">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li id="other" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-
-                            <li id="sidebarpage">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
-
-                            <li id="404">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
-
-                        </ul>
-                    </li>
+                   @if (Request.IsAuthenticated)
+                   {
+                       if (User.IsInRole("Student"))
+                       {
+                        <li>
+                            <a href="~/Home/Record">My Course</a>
+                        </li>
+                       }
+                   }
+                   
                     @if (Request.IsAuthenticated)
                     {
                         if (User.IsInRole("Admin"))
@@ -136,7 +107,7 @@
 
         <hr>
 
-        <footer>
+        <footer >
             <div class="row">
                 <div class="col-lg-12">
                     <p class="karna">Copyright &copy; Company 2017</p>

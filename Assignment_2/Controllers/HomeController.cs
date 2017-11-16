@@ -80,15 +80,11 @@ namespace Assignment_2.Controllers
             var x = User.Identity.GetUserId();
             var help = new StudentHelpers();
             help.UpdateUser(user, email, number, x.ToString());
-
-
-
-
             ViewBag.name = user;
             ViewBag.email = email;
             ViewBag.number = number;
 
-            return View("MyProfile");
+            return View("Index");
 
         }
 
@@ -101,5 +97,29 @@ namespace Assignment_2.Controllers
 
             return View("Index");
         }
+        [Authorize]
+        public ActionResult Record()
+        {           
+            StudentHelpers helpers = new StudentHelpers();
+            var x = User.Identity.GetUserId();
+           StudentViewModel _return = new StudentViewModel();
+            var _reg = helpers.Add_Student_Course();
+            _return = helpers.Get_All_data_Student();
+            _return.Get_All_Groups = helpers.Get_All_Groups();
+            _return.StudentDetailModel = helpers.get_Student_ById(x.ToString());
+
+            return View(_return);
+
+        }
+        [HttpPost]
+        public ActionResult Record(Guid groupID)
+        {
+            var id = groupID;
+            StudentHelpers helpers = new StudentHelpers();
+            helpers.JoinStudentGroup(id);
+
+            return RedirectToAction("MyProfile");
+        }
+
     }
 }

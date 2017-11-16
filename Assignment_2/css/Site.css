@@ -47,6 +47,7 @@ body {
     padding-bottom: 20px;
     /*background-color: white;
     color: black;*/
+    font-size:20px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -138,6 +139,7 @@ body {
 /* Set width on the form input elements since they're 100% wide by default */
 input, select {
     max-width: 280px;
+    min-height:40px;
 }
 
 .video-div {
@@ -219,4 +221,29 @@ li {
 
 .editorClass{
     color:red;
+}
+
+.slider-index{
+
+    height:200px;
+    width:200px;
+
+}
+.container-2{
+    width:80%;
+}
+.buttons{
+    border-radius:5px;
+    text-decoration:none;
+    color:white;
+    width:160px;
+
+}
+.big-button{
+    font-size:50px;
+    width:350px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    
 }

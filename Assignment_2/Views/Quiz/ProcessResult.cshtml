@@ -4,11 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
-    <link href="~/css/@ViewBag.color " rel="stylesheet" />
+    <link href="~/css/@ViewBag.color " rel="stylesheet" /> 
 
 </head>
 <div id="result-sheet">
     <h2>Result</h2>
 
     <h1>You have scored @ViewBag.result%</h1>
+
+   @Html.ActionLink("Go to Home -->","Home")
 </div>

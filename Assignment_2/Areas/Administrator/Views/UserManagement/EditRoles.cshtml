@@ -17,13 +17,13 @@
             @Html.ActionLink("Back",
        "EditUser",
        new { UserName = Model.UserName },
-       new { @class = "btn btn-default" })
-            <input type="submit" value="Add Role" class="btn btn-default" />
+       new { @class = "btn btn-warning" })
+            <input type="submit" value="Add Role" class="btn btn-warning" />
             @Html.DropDownList("AddRole")
         </div>
         <br />
 
-        <table class="table">
+        <table class="table" style="font-size:20px;">
             <tr>
                 <th>
                     Existing Roles:

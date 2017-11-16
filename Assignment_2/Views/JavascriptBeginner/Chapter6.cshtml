@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Chapter 1";
+    ViewBag.Title = "Chapter 6";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -38,7 +38,8 @@
         document.write(Date());
 </script>
 </textarea> <br />
-            <li class="btn btn-default"> <b>  @Html.ActionLink("<< Prev", "Chapter6", "JavascriptBeginner")</b></li></b></li><li class="btn btn-default"> <b>  @Html.ActionLink("Next >>", "Chapter7", "JavascriptBeginner")</b></li></a>
+            <br/>
+            <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("<< Prev", "Chapter5", "JavascriptBeginner", new { @class = "buttons" })</b></li> <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("Next >>", "Chapter7", "JavascriptBeginner", new { @class = "buttons" })</b></li>
 
         </div>
         <div class="col-md-4">
@@ -62,7 +63,7 @@
                     
  </textarea>
 
-                <button type="submit" class="btn btn-primary">Try Now!</button>
+                <button type="submit" class="btn btn-warning">Try Now!</button>
             }
         </div>
     </div>

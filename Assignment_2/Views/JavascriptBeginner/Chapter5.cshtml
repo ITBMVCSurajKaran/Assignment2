@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Chapter 1";
+    ViewBag.Title = "Chapter 5";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2 class="page-header">Some Javescript Basics : Chapter-5</h2>
-<textarea name="chapter1" cols=”80″ rows=”85″ class=" text-val" disabled>                
+<textarea name="chapter5" cols=”80″ rows=”85″ class=" text-val" disabled>                
    
  <p>Assign 5 to x, and display the value of the comparison (x == 8):</p>
 
@@ -45,7 +45,8 @@
 </script>
 
 </textarea> <br />
-            <li class="btn btn-default"> <b>  @Html.ActionLink("<< Prev", "Chapter5", "JavascriptBeginner")</b></li></b></li><li class="btn btn-default"> <b>  @Html.ActionLink("Next >>", "Chapter6", "JavascriptBeginner")</b></li></a>
+            <br/>
+            <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("<< Prev", "Chapter4", "JavascriptBeginner", new { @class = "buttons" })</b></li> <li class="btn btn-warning buttons"> <b>  @Html.ActionLink("Next >>", "Chapter6", "JavascriptBeginner", new { @class = "buttons" })</b></li>
 
         </div>
         <div class="col-md-4">
@@ -75,7 +76,7 @@
 </html>
 </textarea>
 
-                <button type="submit" class="btn btn-primary">Try Now!</button>
+                <button type="submit" class="btn btn-warning">Try Now!</button>
             }
         </div>
     </div>
